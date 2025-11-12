@@ -1,0 +1,339 @@
+---
+// Hero component - Diseño 7 (Divine/Roman Style)
+---
+
+<section class="hero" id="hero">
+	<div class="divine-container">
+		<div class="divine-header">
+			<div class="crown-decoration">⚜</div>
+			<h1 class="divine-title">Alejandro Rojo Rubio</h1>
+			<div class="title-underline"></div>
+			<p class="divine-subtitle">Desarrollador Front-End</p>
+			<div class="laurel-decoration">
+				<span>🌿</span>
+				<span>🌿</span>
+			</div>
+		</div>
+		<div class="divine-content">
+			<div class="divine-text">
+				<p class="divine-quote">
+					"Artesano del código que forja experiencias digitales con la precisión de un maestro 
+					y la dedicación de un devoto. Especializado en crear interfaces que inspiran y 
+					aplicaciones que perduran."
+				</p>
+			</div>
+			<div class="divine-stats">
+				<div class="stat-column">
+					<div class="stat-value">75+</div>
+					<div class="stat-label">Proyectos</div>
+				</div>
+				<div class="stat-column">
+					<div class="stat-value">5</div>
+					<div class="stat-label">Años</div>
+				</div>
+				<div class="stat-column">
+					<div class="stat-value">30+</div>
+					<div class="stat-label">Clientes</div>
+				</div>
+			</div>
+			<div class="divine-actions">
+				<a href="#projects" class="divine-btn primary">Ver Obras</a>
+				<a href="#contact" class="divine-btn secondary">Contactar</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 50%, #faf8f3 100%);
+		min-height: 90vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		max-width: 100vw;
+		padding: 4rem 2rem;
+		padding-top: calc(4rem + 80px);
+		position: relative;
+		overflow-x: hidden;
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: 
+			radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+			radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.06) 0%, transparent 50%);
+		pointer-events: none;
+	}
+
+	.divine-container {
+		position: relative;
+		width: 100%;
+		max-width: 1000px;
+		z-index: 1;
+		text-align: center;
+	}
+
+	.divine-header {
+		margin-bottom: 3rem;
+	}
+
+	.crown-decoration {
+		font-size: 3rem;
+		color: #d4af37;
+		margin-bottom: 1rem;
+		text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+	}
+
+	.divine-title {
+		font-family: 'Georgia', 'Times New Roman', serif;
+		font-size: 4rem;
+		color: #2c1810;
+		margin: 0 0 1rem 0;
+		font-weight: 700;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		position: relative;
+	}
+
+	.title-underline {
+		width: 200px;
+		height: 4px;
+		background: linear-gradient(90deg, transparent, #d4af37, transparent);
+		margin: 0 auto 1.5rem;
+		position: relative;
+	}
+
+	.title-underline::before,
+	.title-underline::after {
+		content: '⚜';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		color: #d4af37;
+		font-size: 1.2rem;
+	}
+
+	.title-underline::before {
+		left: -40px;
+	}
+
+	.title-underline::after {
+		right: -40px;
+	}
+
+	.divine-subtitle {
+		font-family: 'Georgia', 'Times New Roman', serif;
+		font-size: 1.5rem;
+		color: #8b7355;
+		margin: 0 0 1.5rem 0;
+		font-style: italic;
+		letter-spacing: 2px;
+	}
+
+	.laurel-decoration {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+		margin-top: 1rem;
+	}
+
+	.laurel-decoration span {
+		font-size: 2rem;
+		color: #8b7355;
+		opacity: 0.6;
+	}
+
+	.divine-content {
+		background: rgba(255, 255, 255, 0.7);
+		border: 3px solid #d4af37;
+		border-radius: 8px;
+		padding: 3rem;
+		box-shadow: 
+			0 0 0 2px rgba(212, 175, 55, 0.2),
+			0 20px 60px rgba(0, 0, 0, 0.1),
+			inset 0 0 50px rgba(255, 255, 255, 0.5);
+		position: relative;
+	}
+
+	.divine-content::before {
+		content: '';
+		position: absolute;
+		top: -3px;
+		left: -3px;
+		right: -3px;
+		bottom: -3px;
+		background: linear-gradient(45deg, #d4af37, #f4d03f, #d4af37);
+		border-radius: 8px;
+		z-index: -1;
+		opacity: 0.3;
+	}
+
+	.divine-text {
+		margin-bottom: 2.5rem;
+	}
+
+	.divine-quote {
+		font-family: 'Georgia', 'Times New Roman', serif;
+		font-size: 1.2rem;
+		color: #2c1810;
+		line-height: 1.8;
+		margin: 0;
+		font-style: italic;
+		position: relative;
+		padding: 0 2rem;
+	}
+
+	.divine-quote::before,
+	.divine-quote::after {
+		content: '"';
+		font-size: 3rem;
+		color: #d4af37;
+		position: absolute;
+		font-family: 'Georgia', serif;
+		opacity: 0.5;
+	}
+
+	.divine-quote::before {
+		left: 0;
+		top: -10px;
+	}
+
+	.divine-quote::after {
+		right: 0;
+		bottom: -30px;
+	}
+
+	.divine-stats {
+		display: flex;
+		justify-content: center;
+		gap: 3rem;
+		margin-bottom: 2.5rem;
+		padding: 2rem 0;
+		border-top: 2px solid rgba(212, 175, 55, 0.3);
+		border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+	}
+
+	.stat-column {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.stat-value {
+		font-family: 'Georgia', 'Times New Roman', serif;
+		font-size: 3rem;
+		color: #d4af37;
+		font-weight: 700;
+		text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+	}
+
+	.stat-label {
+		font-size: 0.9rem;
+		color: #8b7355;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: 600;
+	}
+
+	.divine-actions {
+		display: flex;
+		justify-content: center;
+		gap: 1.5rem;
+		flex-wrap: wrap;
+	}
+
+	.divine-btn {
+		padding: 1rem 2.5rem;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1rem;
+		transition: all 0.3s ease;
+		display: inline-block;
+		font-family: 'Georgia', 'Times New Roman', serif;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.divine-btn.primary {
+		background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+		color: #2c1810;
+		border: 2px solid #d4af37;
+		box-shadow: 
+			0 4px 15px rgba(212, 175, 55, 0.4),
+			inset 0 1px 0 rgba(255, 255, 255, 0.3);
+	}
+
+	.divine-btn.primary:hover {
+		background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
+		transform: translateY(-2px);
+		box-shadow: 
+			0 6px 20px rgba(212, 175, 55, 0.5),
+			inset 0 1px 0 rgba(255, 255, 255, 0.3);
+	}
+
+	.divine-btn.secondary {
+		background: transparent;
+		color: #d4af37;
+		border: 2px solid #d4af37;
+	}
+
+	.divine-btn.secondary:hover {
+		background: #d4af37;
+		color: #2c1810;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+	}
+
+	@media (max-width: 968px) {
+		.hero {
+			padding: 2rem 1rem;
+			padding-top: calc(2rem + 80px);
+		}
+
+		.divine-title {
+			font-size: 2.5rem;
+		}
+
+		.divine-subtitle {
+			font-size: 1.2rem;
+		}
+
+		.divine-content {
+			padding: 2rem 1.5rem;
+		}
+
+		.divine-quote {
+			font-size: 1rem;
+			padding: 0 1rem;
+		}
+
+		.divine-stats {
+			gap: 2rem;
+		}
+
+		.stat-value {
+			font-size: 2rem;
+		}
+
+		.divine-actions {
+			flex-direction: column;
+		}
+
+		.divine-btn {
+			width: 100%;
+			text-align: center;
+		}
+	}
+</style>
+

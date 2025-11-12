@@ -1,0 +1,179 @@
+<section class="contact" id="contact">
+	<div class="container">
+		<div class="contact-card">
+			<div class="contact-info">
+				<p class="eyebrow">Contacto</p>
+				<h2>¿Colaboramos en tu próximo proyecto?</h2>
+				<p>
+					Cuéntame qué necesitas y encontremos la mejor forma de trabajar juntos. Respondo en menos de 24 horas.
+				</p>
+				<div class="details">
+					<div>
+						<span>Email</span>
+						<a href="mailto:alex@example.com">alex@example.com</a>
+					</div>
+					<div>
+						<span>Teléfono</span>
+						<a href="tel:+34612345678">+34 612 345 678</a>
+					</div>
+				</div>
+			</div>
+
+			<form class="contact-form">
+				<div class="form-grid">
+					<label>
+						Nombre
+						<input type="text" placeholder="Tu nombre" required />
+					</label>
+					<label>
+						Email
+						<input type="email" placeholder="tu@email.com" required />
+					</label>
+				</div>
+				<label>
+					Asunto
+					<input type="text" placeholder="¿Cómo puedo ayudarte?" required />
+				</label>
+				<label>
+					Mensaje
+					<textarea rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+				</label>
+				<button type="submit">Enviar mensaje</button>
+			</form>
+		</div>
+	</div>
+</section>
+
+<style>
+	.contact {
+		background: #f8fafc;
+		padding: 6rem 1.5rem;
+	}
+
+	.container {
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.contact-card {
+		background: #ffffff;
+		border-radius: 2rem;
+		box-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
+		padding: 3.5rem;
+		display: grid;
+		grid-template-columns: 1fr 1.2fr;
+		gap: 3rem;
+	}
+
+	.contact-info {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.eyebrow {
+		font-size: 0.85rem;
+		letter-spacing: 0.25rem;
+		text-transform: uppercase;
+		color: #2563eb;
+		font-weight: 600;
+	}
+
+	h2 {
+		font-size: 2.3rem;
+		color: #0f172a;
+		margin: 0;
+	}
+
+	.contact-info p {
+		color: #475569;
+		line-height: 1.7;
+		margin: 0;
+	}
+
+	.details {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.5rem;
+	}
+
+	.details span {
+		display: block;
+		font-size: 0.85rem;
+		color: #64748b;
+		text-transform: uppercase;
+		letter-spacing: 0.15rem;
+		margin-bottom: 0.25rem;
+	}
+
+	.details a {
+		color: #0f172a;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.contact-form label {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: #0f172a;
+		font-weight: 600;
+	}
+
+	.form-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.5rem;
+	}
+
+	input,
+	textarea {
+		border: 1px solid #e2e8f0;
+		border-radius: 1rem;
+		padding: 0.9rem 1.1rem;
+		font-size: 0.95rem;
+		font-family: inherit;
+		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	input:focus,
+	textarea:focus {
+		outline: none;
+		border-color: #2563eb;
+		box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+	}
+
+	button {
+		align-self: flex-start;
+		padding: 0.9rem 2rem;
+		border-radius: 999px;
+		background: #2563eb;
+		color: #fff;
+		font-weight: 600;
+		border: none;
+		cursor: pointer;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 18px 35px rgba(37, 99, 235, 0.25);
+	}
+
+	@media (max-width: 900px) {
+		.contact-card {
+			grid-template-columns: 1fr;
+			padding: 2.5rem;
+		}
+
+		.form-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

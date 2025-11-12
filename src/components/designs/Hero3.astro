@@ -1,0 +1,328 @@
+---
+// Hero component - Diseño 3 (Retro Classic Style)
+---
+
+<section class="hero" id="hero">
+	<div class="retro-container">
+		<div class="crt-screen">
+			<div class="scanlines"></div>
+			<div class="hero-content">
+				<div class="retro-header">
+					<div class="retro-title">
+						<span class="glitch" data-text="ALEJANDRO">ALEJANDRO</span>
+					</div>
+					<div class="retro-subtitle">ROJO RUBIO</div>
+				</div>
+				<div class="retro-info">
+					<div class="info-line">
+						<span class="prompt">&gt;</span>
+						<span class="command">DESARROLLADOR FRONT-END</span>
+					</div>
+					<div class="info-line">
+						<span class="prompt">&gt;</span>
+						<span class="command">ESPECIALISTA EN REACT & TYPESCRIPT</span>
+					</div>
+				</div>
+				<div class="retro-description">
+					<p>
+						Apasionado por crear experiencias web modernas y funcionales. 
+						Especializado en React, TypeScript y diseño responsive.
+					</p>
+				</div>
+				<div class="retro-buttons">
+					<a href="#projects" class="retro-btn primary">
+						<span class="btn-text">[ VER PROYECTOS ]</span>
+					</a>
+					<a href="#contact" class="retro-btn secondary">
+						<span class="btn-text">[ CONTACTAR ]</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+		min-height: 90vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		max-width: 100vw;
+		padding: 4rem 2rem;
+		padding-top: calc(4rem + 80px);
+		position: relative;
+		overflow-x: hidden;
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: 
+			radial-gradient(circle at 20% 50%, rgba(255, 140, 0, 0.1) 0%, transparent 50%),
+			radial-gradient(circle at 80% 80%, rgba(255, 200, 0, 0.08) 0%, transparent 50%);
+		pointer-events: none;
+	}
+
+	.retro-container {
+		position: relative;
+		width: 100%;
+		max-width: 1000px;
+		z-index: 1;
+	}
+
+	.crt-screen {
+		background: #0a0a0a;
+		border: 8px solid #ff8c00;
+		border-radius: 4px;
+		padding: 3rem;
+		box-shadow: 
+			0 0 0 4px #1a1a1a,
+			0 0 20px rgba(255, 140, 0, 0.5),
+			inset 0 0 50px rgba(0, 0, 0, 0.8);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.crt-screen::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: 
+			repeating-linear-gradient(
+				0deg,
+				rgba(0, 255, 0, 0.03) 0px,
+				transparent 2px,
+				transparent 4px
+			);
+		pointer-events: none;
+		animation: scanline 8s linear infinite;
+	}
+
+	@keyframes scanline {
+		0% { transform: translateY(0); }
+		100% { transform: translateY(100vh); }
+	}
+
+	.scanlines {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: repeating-linear-gradient(
+			0deg,
+			transparent,
+			transparent 2px,
+			rgba(0, 255, 0, 0.03) 2px,
+			rgba(0, 255, 0, 0.03) 4px
+		);
+		pointer-events: none;
+		animation: scanline 8s linear infinite;
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		color: #00ff00;
+		font-family: 'Courier New', monospace;
+	}
+
+	.retro-header {
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.retro-title {
+		font-size: 4rem;
+		font-weight: bold;
+		letter-spacing: 8px;
+		margin-bottom: 0.5rem;
+		text-shadow: 
+			0 0 10px #00ff00,
+			0 0 20px #00ff00,
+			0 0 30px #00ff00;
+		position: relative;
+	}
+
+	.glitch {
+		position: relative;
+		color: #00ff00;
+		animation: glitch 2s infinite;
+	}
+
+	@keyframes glitch {
+		0%, 100% {
+			text-shadow: 
+				0 0 10px #00ff00,
+				0 0 20px #00ff00,
+				0 0 30px #00ff00;
+		}
+		20% {
+			text-shadow: 
+				2px 0 10px #ff0080,
+				-2px 0 10px #00ffff;
+		}
+		40% {
+			text-shadow: 
+				-2px 0 10px #ff0080,
+				2px 0 10px #00ffff;
+		}
+		60% {
+			text-shadow: 
+				0 0 10px #00ff00,
+				0 0 20px #00ff00,
+				0 0 30px #00ff00;
+		}
+	}
+
+	.retro-subtitle {
+		font-size: 1.5rem;
+		color: #ff8c00;
+		letter-spacing: 4px;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+
+	.retro-info {
+		margin: 2rem 0;
+		padding: 1.5rem;
+		background: rgba(0, 255, 0, 0.05);
+		border: 2px solid #00ff00;
+		border-left: 6px solid #00ff00;
+	}
+
+	.info-line {
+		margin-bottom: 0.75rem;
+		font-size: 1.1rem;
+	}
+
+	.info-line:last-child {
+		margin-bottom: 0;
+	}
+
+	.prompt {
+		color: #ff8c00;
+		margin-right: 0.5rem;
+		font-weight: bold;
+	}
+
+	.command {
+		color: #00ff00;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+
+	.retro-description {
+		margin: 2rem 0;
+		padding: 1.5rem;
+		background: rgba(255, 140, 0, 0.05);
+		border: 2px dashed #ff8c00;
+	}
+
+	.retro-description p {
+		color: #ffd700;
+		line-height: 1.8;
+		font-size: 1rem;
+		margin: 0;
+	}
+
+	.retro-buttons {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+		margin-top: 2rem;
+		flex-wrap: wrap;
+	}
+
+	.retro-btn {
+		padding: 1rem 2rem;
+		text-decoration: none;
+		border: 3px solid;
+		position: relative;
+		display: inline-block;
+		transition: all 0.3s ease;
+		font-family: 'Courier New', monospace;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+
+	.retro-btn.primary {
+		background: #00ff00;
+		border-color: #00ff00;
+		color: #000;
+		box-shadow: 
+			0 0 10px #00ff00,
+			inset 0 0 10px rgba(0, 0, 0, 0.2);
+	}
+
+	.retro-btn.primary:hover {
+		background: #00cc00;
+		box-shadow: 
+			0 0 20px #00ff00,
+			0 0 30px #00ff00,
+			inset 0 0 10px rgba(0, 0, 0, 0.3);
+		transform: translateY(-2px);
+	}
+
+	.retro-btn.secondary {
+		background: transparent;
+		border-color: #ff8c00;
+		color: #ff8c00;
+		box-shadow: 
+			0 0 10px rgba(255, 140, 0, 0.5);
+	}
+
+	.retro-btn.secondary:hover {
+		background: #ff8c00;
+		color: #000;
+		box-shadow: 
+			0 0 20px #ff8c00,
+			0 0 30px #ff8c00;
+		transform: translateY(-2px);
+	}
+
+	.btn-text {
+		position: relative;
+		z-index: 1;
+	}
+
+	@media (max-width: 968px) {
+		.hero {
+			padding: 2rem 1rem;
+			padding-top: calc(2rem + 80px);
+		}
+
+		.crt-screen {
+			padding: 2rem 1.5rem;
+		}
+
+		.retro-title {
+			font-size: 2.5rem;
+			letter-spacing: 4px;
+		}
+
+		.retro-subtitle {
+			font-size: 1.2rem;
+		}
+
+		.retro-buttons {
+			flex-direction: column;
+		}
+
+		.retro-btn {
+			width: 100%;
+			text-align: center;
+		}
+	}
+</style>

@@ -1,0 +1,164 @@
+---
+const projects = [
+	{
+		title: 'Dashboard de rendimiento',
+		description: 'Métricas en tiempo real, gráficos comparativos y filtros avanzados con experiencia responsive.',
+		roles: ['Product design', 'Front-end'],
+		link: '#'
+	},
+	{
+		title: 'Plataforma de aprendizaje',
+		description: 'Biblioteca de cursos con recomendaciones personalizadas y sistema de progreso gamificado.',
+		roles: ['Front-end', 'Integraciones'],
+		link: '#'
+	},
+	{
+		title: 'Suite de marketing',
+		description: 'Automatización de campañas, reportes programados y colaboración entre equipos.',
+		roles: ['UI kit', 'Front-end'],
+		link: '#'
+	}
+];
+---
+
+<section class="projects" id="projects">
+	<div class="container">
+		<div class="section-header">
+			<p class="eyebrow">Proyectos</p>
+			<h2>Selección de trabajos recientes</h2>
+			<p class="lead">Proyectos construidos con foco en claridad visual, rendimiento y resultados medibles.</p>
+		</div>
+
+		<div class="projects-grid">
+			{projects.map((project) => (
+				<article class="project-card">
+					<header>
+						<h3>{project.title}</h3>
+					</header>
+					<p>{project.description}</p>
+					<ul>
+						{project.roles.map((role) => (
+							<li>{role}</li>
+						))}
+					</ul>
+					<footer>
+						<a href={project.link}>Ver detalle</a>
+					</footer>
+				</article>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.projects {
+		background: #ffffff;
+		padding: 6rem 1.5rem;
+	}
+
+	.container {
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+
+	.section-header {
+		max-width: 680px;
+		margin: 0 auto 3.5rem;
+		text-align: center;
+	}
+
+	.eyebrow {
+		font-size: 0.85rem;
+		letter-spacing: 0.25rem;
+		text-transform: uppercase;
+		color: #2563eb;
+		font-weight: 600;
+		margin-bottom: 0.75rem;
+	}
+
+	h2 {
+		font-size: 2.5rem;
+		color: #0f172a;
+		margin-bottom: 1rem;
+	}
+
+	.lead {
+		font-size: 1.05rem;
+		color: #475569;
+		line-height: 1.7;
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+	}
+
+	.project-card {
+		background: #f8fafc;
+		padding: 2.25rem;
+		border-radius: 1.75rem;
+		box-shadow: 0 22px 45px rgba(15, 23, 42, 0.08);
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.project-card h3 {
+		font-size: 1.4rem;
+		color: #0f172a;
+		margin: 0;
+	}
+
+	.project-card p {
+		color: #475569;
+		line-height: 1.7;
+		margin: 0;
+	}
+
+	.project-card ul {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		list-style: none;
+	}
+
+	.project-card li {
+		padding: 0.45rem 0.9rem;
+		border-radius: 999px;
+		background: #fff;
+		color: #1f2937;
+		font-size: 0.85rem;
+		border: 1px solid #e2e8f0;
+	}
+
+	.project-card footer {
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	.project-card a {
+		color: #2563eb;
+		font-weight: 600;
+		text-decoration: none;
+		position: relative;
+	}
+
+	.project-card a::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: -4px;
+		width: 100%;
+		height: 2px;
+		background: #2563eb;
+		opacity: 0;
+		transition: opacity 0.2s ease;
+	}
+
+	.project-card a:hover::after {
+		opacity: 1;
+	}
+</style>

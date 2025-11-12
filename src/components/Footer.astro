@@ -1,0 +1,123 @@
+---
+// Footer component
+---
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer-content">
+			<div class="footer-section">
+				<h3>Alejandro Rojo Rubio</h3>
+				<p>Desarrollador Front-End apasionado por crear experiencias web excepcionales.</p>
+			</div>
+			<div class="footer-section">
+				<h4>Enlaces Rápidos</h4>
+				<ul>
+					<li><a href="#hero">Inicio</a></li>
+					<li><a href="#about">Sobre mí</a></li>
+					<li><a href="#skills">Habilidades</a></li>
+					<li><a href="#projects">Proyectos</a></li>
+					<li><a href="#contact">Contacto</a></li>
+				</ul>
+			</div>
+			<div class="footer-section">
+				<h4>Redes Sociales</h4>
+				<div class="social-icons">
+					<a href="#" aria-label="LinkedIn">LinkedIn</a>
+					<a href="#" aria-label="GitHub">GitHub</a>
+					<a href="#" aria-label="Twitter">Twitter</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</footer>
+
+<style>
+	.footer {
+		background-color: #1f2937;
+		color: white;
+		padding: 3rem 2rem 1rem;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.footer-content {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.footer-section h3 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: #6366f1;
+	}
+
+	.footer-section h4 {
+		font-size: 1.1rem;
+		margin-bottom: 1rem;
+	}
+
+	.footer-section p {
+		color: #9ca3af;
+		line-height: 1.6;
+	}
+
+	.footer-section ul {
+		list-style: none;
+	}
+
+	.footer-section ul li {
+		margin-bottom: 0.5rem;
+	}
+
+	.footer-section a {
+		color: #9ca3af;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	.footer-section a:hover {
+		color: #6366f1;
+	}
+
+	.social-icons {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.social-icons a {
+		padding: 0.5rem 1rem;
+		background-color: #374151;
+		border-radius: 0.5rem;
+		transition: background-color 0.3s ease;
+	}
+
+	.social-icons a:hover {
+		background-color: #6366f1;
+		color: white;
+	}
+
+	.footer-bottom {
+		border-top: 1px solid #374151;
+		padding-top: 1.5rem;
+		text-align: center;
+		color: #9ca3af;
+	}
+
+	@media (max-width: 768px) {
+		.footer-content {
+			grid-template-columns: 1fr;
+			text-align: center;
+		}
+
+		.social-icons {
+			justify-content: center;
+		}
+	}
+</style>
+

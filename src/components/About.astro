@@ -1,0 +1,125 @@
+---
+// About component
+---
+
+<section class="about" id="about">
+	<div class="container">
+		<h2 class="section-title">Un poco sobre mí</h2>
+		<div class="about-content">
+			<div class="about-text">
+				<p>
+					Soy un desarrollador front-end apasionado con más de 3 años de experiencia 
+					creando aplicaciones web modernas y responsivas. Mi enfoque se centra en 
+					escribir código limpio, mantenible y en crear experiencias de usuario excepcionales.
+				</p>
+				<p>
+					Me encanta estar al día con las últimas tecnologías y tendencias del desarrollo web. 
+					Trabajo principalmente con React, TypeScript y frameworks modernos, pero también 
+					tengo experiencia con otras tecnologías del ecosistema JavaScript.
+				</p>
+				<p>
+					Cuando no estoy programando, disfruto aprendiendo nuevas habilidades, contribuyendo 
+					a proyectos open source y compartiendo conocimiento con la comunidad de desarrolladores.
+				</p>
+			</div>
+			<div class="about-stats">
+				<div class="stat-item">
+					<h3>50+</h3>
+					<p>Proyectos Completados</p>
+				</div>
+				<div class="stat-item">
+					<h3>3+</h3>
+					<p>Años de Experiencia</p>
+				</div>
+				<div class="stat-item">
+					<h3>20+</h3>
+					<p>Clientes Satisfechos</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about {
+		padding: 5rem 2rem;
+		background-color: #f9fafb;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		text-align: center;
+		margin-bottom: 3rem;
+		color: #1f2937;
+	}
+
+	.about-content {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 4rem;
+		align-items: start;
+	}
+
+	.about-text {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		color: #4b5563;
+	}
+
+	.about-text p {
+		margin-bottom: 1.5rem;
+	}
+
+	.about-stats {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.stat-item {
+		background: white;
+		padding: 2rem;
+		border-radius: 0.5rem;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		text-align: center;
+		transition: transform 0.3s ease;
+	}
+
+	.stat-item:hover {
+		transform: translateY(-5px);
+	}
+
+	.stat-item h3 {
+		font-size: 2.5rem;
+		color: #6366f1;
+		margin-bottom: 0.5rem;
+	}
+
+	.stat-item p {
+		color: #6b7280;
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 768px) {
+		.about-content {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.about-stats {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		.stat-item {
+			flex: 1;
+			min-width: 150px;
+		}
+	}
+</style>
+

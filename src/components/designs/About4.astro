@@ -1,0 +1,150 @@
+<section class="about" id="about">
+	<div class="container">
+		<div class="section-header">
+			<p class="eyebrow">Sobre mí</p>
+			<h2>Una mirada rápida a mi perfil profesional</h2>
+			<p class="lead">
+				Creo productos digitales claros, usables y con impacto. Me gusta colaborar con equipos de diseño y producto para construir experiencias completas.
+			</p>
+		</div>
+
+		<div class="info-grid">
+			<div class="info-card">
+				<h3>Lo que hago</h3>
+				<p>
+					Front-end moderno con React, TypeScript y buenas prácticas. Diseño sistemas de componentes, cuido los detalles visuales y priorizo la accesibilidad.
+				</p>
+				<ul>
+					<li>Diseño y desarrollo de interfaces</li>
+					<li>Integración con APIs y servicios</li>
+					<li>Optimización de rendimiento</li>
+				</ul>
+			</div>
+			<div class="info-card">
+				<h3>Enfoque</h3>
+				<p>
+					Trabajo con ciclos cortos, prototipos tempranos y entregables iterativos. Me gusta trabajar con datos reales para validar decisiones.
+				</p>
+				<div class="metrics">
+					<div>
+						<strong>75+</strong>
+						<span>Proyectos</span>
+					</div>
+					<div>
+						<strong>5 años</strong>
+						<span>Experiencia</span>
+					</div>
+					<div>
+						<strong>12</strong>
+						<span>Equipos</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about {
+		background: #ffffff;
+		padding: 6rem 1.5rem;
+	}
+
+	.container {
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.section-header {
+		text-align: center;
+		max-width: 700px;
+		margin: 0 auto 4rem;
+	}
+
+	.eyebrow {
+		font-size: 0.85rem;
+		letter-spacing: 0.25rem;
+		text-transform: uppercase;
+		color: #2563eb;
+		font-weight: 600;
+		margin-bottom: 0.75rem;
+	}
+
+	h2 {
+		font-size: 2.5rem;
+		color: #0f172a;
+		margin-bottom: 1.5rem;
+	}
+
+	.lead {
+		font-size: 1.1rem;
+		color: #475569;
+		line-height: 1.8;
+	}
+
+	.info-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 2rem;
+	}
+
+	.info-card {
+		background: #f8fafc;
+		padding: 2.5rem;
+		border-radius: 1.5rem;
+		box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1.4rem;
+		color: #0f172a;
+		margin: 0;
+	}
+
+	.info-card p {
+		color: #475569;
+		line-height: 1.7;
+		margin: 0;
+	}
+
+	.info-card ul {
+		margin: 0;
+		padding-left: 1.1rem;
+		color: #1f2937;
+		line-height: 1.6;
+	}
+
+	.info-card li {
+		margin-bottom: 0.5rem;
+	}
+
+	.metrics {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+		text-align: center;
+	}
+
+	.metrics strong {
+		display: block;
+		font-size: 1.8rem;
+		color: #2563eb;
+		font-weight: 700;
+	}
+
+	.metrics span {
+		font-size: 0.85rem;
+		color: #64748b;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+	}
+
+	@media (max-width: 900px) {
+		.info-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

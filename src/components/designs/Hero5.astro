@@ -1,0 +1,197 @@
+---
+// Hero component - Diseño 5 (Red Social Style)
+---
+
+<section class="hero" id="hero">
+	<div class="social-profile">
+		<div class="profile-header">
+			<div class="cover-photo"></div>
+			<div class="profile-info">
+				<div class="avatar">
+					<div class="avatar-placeholder">AR</div>
+				</div>
+				<div class="profile-details">
+					<h1>Alejandro Rojo Rubio</h1>
+					<p class="username">@alejandro_dev</p>
+					<p class="bio">Desarrollador Front-End | React & TypeScript | Creando experiencias digitales</p>
+					<div class="profile-stats">
+						<div class="stat">
+							<strong>75</strong>
+							<span>Proyectos</span>
+						</div>
+						<div class="stat">
+							<strong>5</strong>
+							<span>Años</span>
+						</div>
+						<div class="stat">
+							<strong>30+</strong>
+							<span>Clientes</span>
+						</div>
+					</div>
+					<div class="profile-actions">
+						<button class="btn-primary">Seguir</button>
+						<button class="btn-secondary">Mensaje</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		background: #f0f2f5;
+		padding: 0;
+		padding-top: calc(80px);
+		min-height: auto;
+	}
+
+	.social-profile {
+		width: 100%;
+		max-width: 900px;
+		margin: 0 auto;
+		background: #ffffff;
+		border-radius: 0;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.profile-header {
+		position: relative;
+	}
+
+	.cover-photo {
+		width: 100%;
+		height: 200px;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	}
+
+	.profile-info {
+		padding: 0 2rem 2rem;
+		position: relative;
+	}
+
+	.avatar {
+		position: absolute;
+		top: -60px;
+		left: 2rem;
+	}
+
+	.avatar-placeholder {
+		width: 120px;
+		height: 120px;
+		border-radius: 50%;
+		background: #667eea;
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 2rem;
+		font-weight: bold;
+		border: 4px solid white;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	}
+
+	.profile-details {
+		padding-top: 70px;
+	}
+
+	h1 {
+		font-size: 1.75rem;
+		color: #1c1e21;
+		margin: 0 0 0.25rem 0;
+		font-weight: 600;
+	}
+
+	.username {
+		color: #65676b;
+		font-size: 0.95rem;
+		margin: 0 0 1rem 0;
+	}
+
+	.bio {
+		color: #1c1e21;
+		font-size: 0.95rem;
+		line-height: 1.5;
+		margin: 0 0 1.5rem 0;
+	}
+
+	.profile-stats {
+		display: flex;
+		gap: 2rem;
+		margin-bottom: 1.5rem;
+		padding-bottom: 1.5rem;
+		border-bottom: 1px solid #e4e6eb;
+	}
+
+	.stat {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.stat strong {
+		font-size: 1.25rem;
+		color: #1c1e21;
+		font-weight: 600;
+	}
+
+	.stat span {
+		font-size: 0.85rem;
+		color: #65676b;
+	}
+
+	.profile-actions {
+		display: flex;
+		gap: 0.75rem;
+	}
+
+	button {
+		padding: 0.6rem 1.5rem;
+		border-radius: 6px;
+		font-weight: 600;
+		font-size: 0.95rem;
+		border: none;
+		cursor: pointer;
+		transition: all 0.2s ease;
+	}
+
+	.btn-primary {
+		background: #1877f2;
+		color: white;
+	}
+
+	.btn-primary:hover {
+		background: #166fe5;
+	}
+
+	.btn-secondary {
+		background: #e4e6eb;
+		color: #1c1e21;
+	}
+
+	.btn-secondary:hover {
+		background: #d8dadf;
+	}
+
+	@media (max-width: 768px) {
+		.profile-info {
+			padding: 0 1rem 1.5rem;
+		}
+
+		.avatar {
+			left: 1rem;
+		}
+
+		.profile-stats {
+			gap: 1rem;
+		}
+
+		.profile-actions {
+			flex-direction: column;
+		}
+
+		button {
+			width: 100%;
+		}
+	}
+</style>
+

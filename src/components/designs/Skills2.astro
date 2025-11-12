@@ -1,0 +1,262 @@
+---
+// Skills component - Diseño 2 (D&D Skills & Inventory)
+const skills = [
+	{ name: 'JavaScript', proficient: true, modifier: '95%' },
+	{ name: 'TypeScript', proficient: true, modifier: '90%' },
+	{ name: 'React', proficient: true, modifier: '92%' },
+	{ name: 'Vue.js', proficient: true, modifier: '85%' },
+	{ name: 'Next.js', proficient: true, modifier: '88%' },
+	{ name: 'Node.js', proficient: true, modifier: '88%' },
+	{ name: 'Express', proficient: true, modifier: '85%' },
+	{ name: 'Python', proficient: true, modifier: '85%' },
+	{ name: 'MongoDB', proficient: true, modifier: '80%' },
+	{ name: 'PostgreSQL', proficient: true, modifier: '82%' },
+	{ name: 'Docker', proficient: true, modifier: '75%' },
+	{ name: 'AWS', proficient: true, modifier: '70%' },
+	{ name: 'Git', proficient: true, modifier: '95%' },
+	{ name: 'GraphQL', proficient: true, modifier: '78%' },
+	{ name: 'Redis', proficient: true, modifier: '75%' },
+	{ name: 'Kubernetes', proficient: false, modifier: '60%' },
+	{ name: 'CI/CD', proficient: true, modifier: '80%' },
+	{ name: 'Testing', proficient: true, modifier: '85%' },
+];
+
+const inventory = [
+	{ name: 'Frontend', checked: true, percent: '92%' },
+	{ name: 'Backend', checked: true, percent: '88%' },
+	{ name: 'Full Stack', checked: true, percent: '90%' },
+	{ name: 'Mobile', checked: true, percent: '75%' },
+	{ name: 'Frameworks', checked: true, percent: '90%' },
+	{ name: 'Databases', checked: true, percent: '85%' },
+	{ name: 'Cloud Services', checked: true, percent: '75%' },
+	{ name: 'DevOps', checked: true, percent: '78%' },
+	{ name: 'Testing', checked: true, percent: '85%' },
+	{ name: 'APIs', checked: true, percent: '90%' },
+];
+---
+
+<section class="skills" id="skills">
+	<div class="container">
+		<div class="dnd-section">
+			<div class="skills-panel">
+				<h3 class="panel-title">SKILLS</h3>
+				<div class="skills-list">
+					{skills.map((skill) => (
+						<div class="skill-row">
+							<div class="skill-checkbox-wrapper">
+								<div class={`skill-checkbox ${skill.proficient ? 'checked' : ''}`}>
+									{skill.proficient ? '✓' : ''}
+								</div>
+							</div>
+							<div class="skill-modifier">{skill.modifier}</div>
+							<div class="skill-name">{skill.name}</div>
+						</div>
+					))}
+				</div>
+			</div>
+
+			<div class="inventory-panel">
+				<h3 class="panel-title">INVENTARIO</h3>
+				<div class="inventory-list">
+					{inventory.map((item) => (
+						<div class="inventory-row">
+							<div class={`inventory-checkbox ${item.checked ? 'checked' : ''}`}>
+								{item.checked ? '✓' : ''}
+							</div>
+							<div class="inventory-name">{item.name}</div>
+							<div class="inventory-percent">{item.percent}</div>
+						</div>
+					))}
+				</div>
+			</div>
+
+			<div class="courses-panel">
+				<div class="course-box">
+					<label>PROYECTOS COMPLETADOS</label>
+					<div class="course-value">75+</div>
+				</div>
+				<div class="course-box">
+					<label>AÑOS DE EXPERIENCIA</label>
+					<div class="course-value">5</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.skills {
+		padding: 3rem 2rem;
+		background: #0a0e1a;
+		background-image: 
+			linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+		background-size: 20px 20px;
+		position: relative;
+	}
+
+	.container {
+		max-width: 1400px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+	}
+
+	.dnd-section {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+	}
+
+	.skills-panel,
+	.inventory-panel {
+		background: #1a1f2e;
+		border: 3px solid #00d4ff;
+		border-radius: 4px;
+		padding: 2rem;
+		box-shadow: 
+			0 0 0 2px #0a0e1a,
+			0 0 20px rgba(0, 212, 255, 0.2),
+			inset 0 0 50px rgba(0, 0, 0, 0.3);
+	}
+
+	.panel-title {
+		font-family: 'Courier New', monospace;
+		font-size: 1.1rem;
+		color: #00d4ff;
+		margin: 0 0 1.5rem 0;
+		padding-bottom: 0.5rem;
+		border-bottom: 2px solid #00d4ff;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: bold;
+		text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+	}
+
+	.skills-list,
+	.inventory-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.skill-row,
+	.inventory-row {
+		display: grid;
+		align-items: center;
+		gap: 1rem;
+		padding: 0.5rem;
+		border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+	}
+
+	.skill-row {
+		grid-template-columns: 30px 50px 1fr;
+	}
+
+	.inventory-row {
+		grid-template-columns: 30px 1fr auto;
+	}
+
+	.skill-checkbox-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.skill-checkbox,
+	.inventory-checkbox {
+		width: 20px;
+		height: 20px;
+		border: 2px solid #00d4ff;
+		border-radius: 3px;
+		background: rgba(0, 212, 255, 0.1);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #00ffff;
+		font-size: 0.9rem;
+		font-weight: bold;
+		font-family: 'Courier New', monospace;
+	}
+
+	.skill-checkbox.checked,
+	.inventory-checkbox.checked {
+		background: #00d4ff;
+	}
+
+	.skill-modifier {
+		font-size: 0.9rem;
+		font-weight: bold;
+		color: #00ffff;
+		text-align: center;
+		font-family: 'Courier New', monospace;
+		background: rgba(0, 212, 255, 0.1);
+		padding: 0.25rem;
+		border-radius: 3px;
+		border: 1px solid #00d4ff;
+	}
+
+	.skill-name,
+	.inventory-name {
+		font-size: 0.9rem;
+		color: #00ffff;
+		font-weight: 500;
+		font-family: 'Courier New', monospace;
+	}
+
+	.inventory-percent {
+		font-size: 0.85rem;
+		color: #00d4ff;
+		font-weight: bold;
+		font-family: 'Courier New', monospace;
+	}
+
+	.courses-panel {
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		margin-top: 1rem;
+	}
+
+	.course-box {
+		background: #1a1f2e;
+		border: 3px solid #00d4ff;
+		border-radius: 4px;
+		padding: 1.5rem;
+		box-shadow: 
+			0 0 0 2px #0a0e1a,
+			0 0 20px rgba(0, 212, 255, 0.2),
+			inset 0 0 50px rgba(0, 0, 0, 0.3);
+		text-align: center;
+	}
+
+	.course-box label {
+		display: block;
+		font-size: 0.75rem;
+		font-weight: bold;
+		color: #00d4ff;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin-bottom: 1rem;
+		font-family: 'Courier New', monospace;
+	}
+
+	.course-value {
+		font-size: 2.5rem;
+		color: #00ffff;
+		font-weight: bold;
+		font-family: 'Courier New', monospace;
+		text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+	}
+
+	@media (max-width: 968px) {
+		.dnd-section {
+			grid-template-columns: 1fr;
+		}
+
+		.courses-panel {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

@@ -1,0 +1,217 @@
+---
+// Projects component - Diseño 5 (Red Social Style)
+const projects = [
+	{
+		title: 'Sistema ERP Completo',
+		description: 'Plataforma empresarial para gestión de recursos, inventario y facturación con dashboard analítico.',
+		image: '/img/project1.jpg',
+		likes: 45,
+		comments: 12,
+		shares: 8
+	},
+	{
+		title: 'API RESTful Escalable',
+		description: 'Backend robusto con arquitectura microservicios, autenticación JWT y documentación Swagger completa.',
+		image: '/img/project2.jpg',
+		likes: 38,
+		comments: 9,
+		shares: 5
+	},
+	{
+		title: 'App Móvil Full Stack',
+		description: 'Aplicación móvil con backend en la nube, sincronización offline y notificaciones push en tiempo real.',
+		image: '/img/project3.jpg',
+		likes: 52,
+		comments: 15,
+		shares: 11
+	}
+];
+---
+
+<section class="projects" id="projects">
+	<div class="container">
+		<div class="projects-feed">
+			{projects.map((project) => (
+				<div class="project-post">
+					<div class="post-header">
+						<div class="post-author">
+							<div class="author-avatar">AR</div>
+							<div class="author-info">
+								<strong>Alejandro Rojo Rubio</strong>
+								<span>Hace 1 día · 🌍</span>
+							</div>
+						</div>
+					</div>
+					<div class="post-image">
+						<div class="image-placeholder">
+							<span>{project.title}</span>
+						</div>
+					</div>
+					<div class="post-content">
+						<h3>{project.title}</h3>
+						<p>{project.description}</p>
+					</div>
+					<div class="post-stats">
+						<span>👍 {project.likes}</span>
+						<span>💬 {project.comments}</span>
+						<span>↗️ {project.shares}</span>
+					</div>
+					<div class="post-footer">
+						<button class="reaction-btn">
+							<span>👍</span>
+							<span>Me gusta</span>
+						</button>
+						<button class="reaction-btn">
+							<span>💬</span>
+							<span>Comentar</span>
+						</button>
+						<button class="reaction-btn">
+							<span>↗️</span>
+							<span>Compartir</span>
+						</button>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.projects {
+		background: #f0f2f5;
+		padding: 2rem 1rem;
+	}
+
+	.container {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.projects-feed {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.project-post {
+		background: #ffffff;
+		border-radius: 8px;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+	}
+
+	.post-header {
+		padding: 1rem 1.5rem;
+		border-bottom: 1px solid #e4e6eb;
+	}
+
+	.post-author {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.author-avatar {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background: #667eea;
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		font-size: 0.9rem;
+	}
+
+	.author-info {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.author-info strong {
+		color: #1c1e21;
+		font-size: 0.95rem;
+	}
+
+	.author-info span {
+		color: #65676b;
+		font-size: 0.85rem;
+	}
+
+	.post-image {
+		width: 100%;
+		height: 300px;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.image-placeholder {
+		color: white;
+		font-size: 1.2rem;
+		font-weight: 600;
+		text-align: center;
+		padding: 1rem;
+	}
+
+	.post-content {
+		padding: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1.25rem;
+		color: #1c1e21;
+		margin: 0 0 0.75rem 0;
+		font-weight: 600;
+	}
+
+	.post-content p {
+		color: #65676b;
+		line-height: 1.6;
+		margin: 0;
+		font-size: 0.95rem;
+	}
+
+	.post-stats {
+		display: flex;
+		gap: 1.5rem;
+		padding: 0.75rem 1.5rem;
+		border-top: 1px solid #e4e6eb;
+		border-bottom: 1px solid #e4e6eb;
+		color: #65676b;
+		font-size: 0.9rem;
+	}
+
+	.post-footer {
+		display: flex;
+		justify-content: space-around;
+		padding: 0.5rem 1.5rem;
+	}
+
+	.reaction-btn {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.5rem 1rem;
+		background: transparent;
+		border: none;
+		color: #65676b;
+		font-size: 0.9rem;
+		font-weight: 600;
+		cursor: pointer;
+		border-radius: 4px;
+		transition: background 0.2s ease;
+	}
+
+	.reaction-btn:hover {
+		background: #f0f2f5;
+	}
+
+	.reaction-btn span:first-child {
+		font-size: 1.1rem;
+	}
+</style>
+

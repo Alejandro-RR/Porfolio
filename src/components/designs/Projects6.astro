@@ -1,0 +1,250 @@
+---
+// Projects component - Diseño 6 (Dashboard Style)
+const projects = [
+	{
+		title: 'Sistema ERP',
+		status: 'Completado',
+		progress: 100,
+		technologies: ['React', 'Node.js', 'PostgreSQL'],
+		date: '2024',
+		metrics: { users: 500, revenue: '€50K' }
+	},
+	{
+		title: 'API RESTful',
+		status: 'Completado',
+		progress: 100,
+		technologies: ['Node.js', 'Express', 'MongoDB'],
+		date: '2024',
+		metrics: { requests: '1M+', uptime: '99.9%' }
+	},
+	{
+		title: 'App Móvil',
+		status: 'En desarrollo',
+		progress: 75,
+		technologies: ['React Native', 'Python', 'Firebase'],
+		date: '2024',
+		metrics: { downloads: '10K+', rating: '4.8' }
+	}
+];
+---
+
+<section class="projects" id="projects">
+	<div class="dashboard-container">
+		<div class="section-header">
+			<h2>Proyectos</h2>
+			<p>Portfolio de trabajos recientes</p>
+		</div>
+		<div class="projects-grid">
+			{projects.map((project) => (
+				<div class="project-card">
+					<div class="project-header">
+						<h3>{project.title}</h3>
+						<span class={`status-badge ${project.status === 'Completado' ? 'completed' : 'in-progress'}`}>
+							{project.status}
+						</span>
+					</div>
+					<div class="project-progress">
+						<div class="progress-header">
+							<span>Progreso</span>
+							<span>{project.progress}%</span>
+						</div>
+						<div class="progress-bar">
+							<div class="progress-fill" style={`width: ${project.progress}%`}></div>
+						</div>
+					</div>
+					<div class="project-tech">
+						{project.technologies.map((tech) => (
+							<span class="tech-badge">{tech}</span>
+						))}
+					</div>
+					<div class="project-metrics">
+						{Object.entries(project.metrics).map(([key, value]) => (
+							<div class="metric">
+								<span class="metric-label">{key}</span>
+								<span class="metric-value">{value}</span>
+							</div>
+						))}
+					</div>
+					<div class="project-footer">
+						<span class="project-date">{project.date}</span>
+						<a href="#" class="view-btn">Ver detalles →</a>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.projects {
+		background: #ffffff;
+		padding: 3rem 1.5rem;
+	}
+
+	.dashboard-container {
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+
+	.section-header {
+		margin-bottom: 2rem;
+	}
+
+	h2 {
+		font-size: 1.75rem;
+		color: #1e293b;
+		margin: 0 0 0.5rem 0;
+		font-weight: 700;
+	}
+
+	.section-header p {
+		color: #64748b;
+		font-size: 0.95rem;
+		margin: 0;
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.project-card {
+		background: #f8fafc;
+		border-radius: 12px;
+		padding: 1.5rem;
+		border: 1px solid #e2e8f0;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.project-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	h3 {
+		font-size: 1.2rem;
+		color: #1e293b;
+		margin: 0;
+		font-weight: 600;
+	}
+
+	.status-badge {
+		padding: 0.35rem 0.75rem;
+		border-radius: 6px;
+		font-size: 0.75rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.status-badge.completed {
+		background: #d1fae5;
+		color: #065f46;
+	}
+
+	.status-badge.in-progress {
+		background: #dbeafe;
+		color: #1e40af;
+	}
+
+	.project-progress {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.progress-header {
+		display: flex;
+		justify-content: space-between;
+		font-size: 0.85rem;
+		color: #64748b;
+	}
+
+	.progress-bar {
+		height: 8px;
+		background: #e2e8f0;
+		border-radius: 4px;
+		overflow: hidden;
+	}
+
+	.progress-fill {
+		height: 100%;
+		background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+		border-radius: 4px;
+		transition: width 0.6s ease;
+	}
+
+	.project-tech {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.tech-badge {
+		padding: 0.35rem 0.75rem;
+		background: white;
+		color: #475569;
+		border-radius: 6px;
+		font-size: 0.8rem;
+		font-weight: 500;
+		border: 1px solid #e2e8f0;
+	}
+
+	.project-metrics {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.75rem;
+		padding-top: 0.75rem;
+		border-top: 1px solid #e2e8f0;
+	}
+
+	.metric {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.metric-label {
+		font-size: 0.75rem;
+		color: #64748b;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.metric-value {
+		font-size: 1.1rem;
+		font-weight: 700;
+		color: #1e293b;
+	}
+
+	.project-footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 0.75rem;
+		border-top: 1px solid #e2e8f0;
+	}
+
+	.project-date {
+		font-size: 0.85rem;
+		color: #64748b;
+	}
+
+	.view-btn {
+		color: #667eea;
+		text-decoration: none;
+		font-size: 0.9rem;
+		font-weight: 600;
+		transition: color 0.2s ease;
+	}
+
+	.view-btn:hover {
+		color: #764ba2;
+	}
+</style>
+

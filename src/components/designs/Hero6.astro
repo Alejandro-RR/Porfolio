@@ -1,0 +1,188 @@
+---
+// Hero component - Diseño 6 (Dashboard Style)
+---
+
+<section class="hero" id="hero">
+	<div class="dashboard-container">
+		<div class="dashboard-header">
+			<div class="header-left">
+				<h1>Portfolio Dashboard</h1>
+				<p>Resumen de proyectos y estadísticas</p>
+			</div>
+			<div class="header-right">
+				<div class="user-profile">
+					<div class="profile-avatar">AR</div>
+					<div class="profile-name">Alejandro Rojo</div>
+				</div>
+			</div>
+		</div>
+		<div class="stats-grid">
+			<div class="stat-card">
+				<div class="stat-icon">📊</div>
+				<div class="stat-content">
+					<div class="stat-value">75+</div>
+					<div class="stat-label">Proyectos</div>
+				</div>
+				<div class="stat-trend up">+12%</div>
+			</div>
+			<div class="stat-card">
+				<div class="stat-icon">⏱️</div>
+				<div class="stat-content">
+					<div class="stat-value">5</div>
+					<div class="stat-label">Años Exp.</div>
+				</div>
+				<div class="stat-trend up">+1</div>
+			</div>
+			<div class="stat-card">
+				<div class="stat-icon">👥</div>
+				<div class="stat-content">
+					<div class="stat-value">30+</div>
+					<div class="stat-label">Clientes</div>
+				</div>
+				<div class="stat-trend up">+5</div>
+			</div>
+			<div class="stat-card">
+				<div class="stat-icon">⭐</div>
+				<div class="stat-content">
+					<div class="stat-value">4.9</div>
+					<div class="stat-label">Rating</div>
+				</div>
+				<div class="stat-trend up">+0.2</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		background: #f8fafc;
+		padding: 2rem 1.5rem;
+		padding-top: calc(2rem + 80px);
+		min-height: auto;
+	}
+
+	.dashboard-container {
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+
+	.dashboard-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 2rem;
+		padding-bottom: 1.5rem;
+		border-bottom: 2px solid #e2e8f0;
+	}
+
+	h1 {
+		font-size: 2rem;
+		color: #1e293b;
+		margin: 0 0 0.5rem 0;
+		font-weight: 700;
+	}
+
+	.dashboard-header p {
+		color: #64748b;
+		font-size: 0.95rem;
+		margin: 0;
+	}
+
+	.user-profile {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.profile-avatar {
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		font-size: 1rem;
+	}
+
+	.profile-name {
+		color: #1e293b;
+		font-weight: 600;
+		font-size: 0.95rem;
+	}
+
+	.stats-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.stat-card {
+		background: white;
+		border-radius: 12px;
+		padding: 1.5rem;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		position: relative;
+		border-left: 4px solid #667eea;
+	}
+
+	.stat-icon {
+		font-size: 2rem;
+		width: 60px;
+		height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #f1f5f9;
+		border-radius: 12px;
+	}
+
+	.stat-content {
+		flex: 1;
+	}
+
+	.stat-value {
+		font-size: 2rem;
+		font-weight: 700;
+		color: #1e293b;
+		line-height: 1;
+		margin-bottom: 0.25rem;
+	}
+
+	.stat-label {
+		font-size: 0.85rem;
+		color: #64748b;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.stat-trend {
+		font-size: 0.85rem;
+		font-weight: 600;
+		padding: 0.25rem 0.5rem;
+		border-radius: 6px;
+	}
+
+	.stat-trend.up {
+		background: #d1fae5;
+		color: #065f46;
+	}
+
+	@media (max-width: 768px) {
+		.dashboard-header {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1rem;
+		}
+
+		.stats-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+

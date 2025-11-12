@@ -1,0 +1,313 @@
+---
+// Projects component - Diseño 3 (Retro Classic Style)
+const projects = [
+	{
+		title: 'Sistema ERP',
+		description: 'Plataforma empresarial completa para gestión de recursos, inventario y facturación.',
+		technologies: ['React', 'Node.js', 'PostgreSQL', 'Redis'],
+		status: 'COMPLETED'
+	},
+	{
+		title: 'API RESTful',
+		description: 'Backend robusto con arquitectura microservicios, autenticación JWT y documentación Swagger.',
+		technologies: ['Node.js', 'Express', 'MongoDB', 'Docker'],
+		status: 'COMPLETED'
+	},
+	{
+		title: 'App Móvil',
+		description: 'Aplicación móvil con backend en la nube, sincronización offline y notificaciones push.',
+		technologies: ['React Native', 'Python', 'Firebase', 'AWS'],
+		status: 'IN PROGRESS'
+	},
+	{
+		title: 'E-learning',
+		description: 'Sistema de aprendizaje online con video streaming, quizzes interactivos y certificaciones.',
+		technologies: ['Vue.js', 'Django', 'PostgreSQL', 'AWS S3'],
+		status: 'COMPLETED'
+	},
+	{
+		title: 'Marketplace B2B',
+		description: 'Plataforma de comercio B2B con sistema de subastas, pagos integrados y gestión de pedidos.',
+		technologies: ['Next.js', 'GraphQL', 'Stripe', 'MongoDB'],
+		status: 'COMPLETED'
+	},
+	{
+		title: 'Dashboard Analytics',
+		description: 'Panel de control con visualizaciones en tiempo real, exportación de reportes y alertas.',
+		technologies: ['React', 'D3.js', 'Python', 'Elasticsearch'],
+		status: 'COMPLETED'
+	}
+];
+---
+
+<section class="projects" id="projects">
+	<div class="container">
+		<div class="retro-section-header">
+			<h2 class="retro-title">
+				<span class="title-bracket">[</span>
+				PROYECTOS
+				<span class="title-bracket">]</span>
+			</h2>
+		</div>
+
+		<div class="projects-grid">
+			{projects.map((project) => (
+				<div class="project-card">
+					<div class="card-header">
+						<div class="card-title">{project.title}</div>
+						<div class="card-status" class:active={project.status === 'COMPLETED'}>
+							{project.status}
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="project-description">
+							<span class="desc-label">DESC:</span>
+							<span class="desc-text">{project.description}</span>
+						</div>
+						<div class="project-tech">
+							<span class="tech-label">TECH:</span>
+							<div class="tech-list">
+								{project.technologies.map((tech) => (
+									<span class="tech-item">{tech}</span>
+								))}
+							</div>
+						</div>
+					</div>
+					<div class="card-footer">
+						<a href="#" class="project-link">
+							<span class="link-arrow">&gt;&gt;</span>
+							<span class="link-text">VER PROYECTO</span>
+						</a>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.projects {
+		padding: 5rem 2rem;
+		background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+		position: relative;
+	}
+
+	.projects::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: 
+			repeating-linear-gradient(
+				45deg,
+				transparent,
+				transparent 10px,
+				rgba(255, 140, 0, 0.03) 10px,
+				rgba(255, 140, 0, 0.03) 20px
+			);
+		pointer-events: none;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+	}
+
+	.retro-section-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.retro-title {
+		font-family: 'Courier New', monospace;
+		font-size: 2.5rem;
+		color: #ff8c00;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		text-shadow: 
+			0 0 10px #ff8c00,
+			0 0 20px rgba(255, 140, 0, 0.5);
+	}
+
+	.title-bracket {
+		color: #00ff00;
+		font-size: 3rem;
+		margin: 0 0.5rem;
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+	}
+
+	.project-card {
+		background: #0a0a0a;
+		border: 4px solid #ff8c00;
+		box-shadow: 
+			0 0 0 2px #1a1a1a,
+			0 0 20px rgba(255, 140, 0, 0.3),
+			inset 0 0 30px rgba(0, 0, 0, 0.8);
+		display: flex;
+		flex-direction: column;
+		transition: all 0.3s ease;
+	}
+
+	.project-card:hover {
+		border-color: #00ff00;
+		box-shadow: 
+			0 0 0 2px #1a1a1a,
+			0 0 30px rgba(0, 255, 0, 0.5),
+			inset 0 0 30px rgba(0, 0, 0, 0.8);
+		transform: translateY(-5px);
+	}
+
+	.card-header {
+		background: #ff8c00;
+		padding: 1rem 1.5rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 2px solid #1a1a1a;
+	}
+
+	.card-title {
+		font-family: 'Courier New', monospace;
+		font-size: 1.1rem;
+		font-weight: bold;
+		color: #000;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+
+	.card-status {
+		font-family: 'Courier New', monospace;
+		font-size: 0.75rem;
+		font-weight: bold;
+		padding: 0.25rem 0.75rem;
+		background: #1a1a1a;
+		color: #ff8c00;
+		border: 1px solid #ff8c00;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.card-status.active {
+		background: #00ff00;
+		color: #000;
+		border-color: #00ff00;
+	}
+
+	.card-body {
+		padding: 1.5rem;
+		flex: 1;
+		font-family: 'Courier New', monospace;
+	}
+
+	.project-description {
+		margin-bottom: 1.5rem;
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.desc-label {
+		color: #ff8c00;
+		font-weight: bold;
+		min-width: 50px;
+	}
+
+	.desc-text {
+		color: #ffd700;
+		line-height: 1.6;
+		font-size: 0.9rem;
+		flex: 1;
+	}
+
+	.project-tech {
+		display: flex;
+		gap: 0.5rem;
+		align-items: flex-start;
+	}
+
+	.tech-label {
+		color: #ff8c00;
+		font-weight: bold;
+		min-width: 50px;
+	}
+
+	.tech-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		flex: 1;
+	}
+
+	.tech-item {
+		background: #1a1a1a;
+		border: 1px solid #00ff00;
+		color: #00ff00;
+		padding: 0.25rem 0.75rem;
+		font-size: 0.75rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+	}
+
+	.card-footer {
+		padding: 1rem 1.5rem;
+		background: rgba(255, 140, 0, 0.1);
+		border-top: 2px solid #ff8c00;
+	}
+
+	.project-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: #00ff00;
+		text-decoration: none;
+		font-family: 'Courier New', monospace;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-size: 0.9rem;
+		transition: all 0.3s ease;
+	}
+
+	.project-link:hover {
+		color: #ff8c00;
+		text-shadow: 0 0 10px #ff8c00;
+	}
+
+	.link-arrow {
+		color: #ff8c00;
+	}
+
+	.project-link:hover .link-arrow {
+		color: #00ff00;
+		animation: blink 1s infinite;
+	}
+
+	@keyframes blink {
+		0%, 50% { opacity: 1; }
+		51%, 100% { opacity: 0.3; }
+	}
+
+	@media (max-width: 768px) {
+		.projects-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.retro-title {
+			font-size: 1.8rem;
+		}
+
+		.title-bracket {
+			font-size: 2rem;
+		}
+	}
+</style>

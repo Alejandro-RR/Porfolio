@@ -1,0 +1,149 @@
+---
+// Skills component
+const skills = [
+	{ name: 'HTML/CSS', level: 95 },
+	{ name: 'JavaScript', level: 90 },
+	{ name: 'TypeScript', level: 85 },
+	{ name: 'React', level: 90 },
+	{ name: 'Vue.js', level: 75 },
+	{ name: 'Node.js', level: 80 },
+	{ name: 'Git', level: 85 },
+	{ name: 'Figma', level: 70 },
+];
+---
+
+<section class="skills" id="skills">
+	<div class="container">
+		<h2 class="section-title">Nivel de conocimientos</h2>
+		<div class="skills-grid">
+			{skills.map((skill) => (
+				<div class="skill-item">
+					<div class="skill-header">
+						<span class="skill-name">{skill.name}</span>
+						<span class="skill-percentage">{skill.level}%</span>
+					</div>
+					<div class="skill-bar">
+						<div class="skill-progress" style={`width: ${skill.level}%`}></div>
+					</div>
+				</div>
+			))}
+		</div>
+		<div class="technologies">
+			<h3>Tecnologías que manejo</h3>
+			<div class="tech-tags">
+				<span class="tech-tag">React</span>
+				<span class="tech-tag">TypeScript</span>
+				<span class="tech-tag">JavaScript</span>
+				<span class="tech-tag">Vue.js</span>
+				<span class="tech-tag">Node.js</span>
+				<span class="tech-tag">Next.js</span>
+				<span class="tech-tag">Astro</span>
+				<span class="tech-tag">Tailwind CSS</span>
+				<span class="tech-tag">SASS</span>
+				<span class="tech-tag">Git</span>
+				<span class="tech-tag">Webpack</span>
+				<span class="tech-tag">Vite</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.skills {
+		padding: 5rem 2rem;
+		background-color: white;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		text-align: center;
+		margin-bottom: 3rem;
+		color: #1f2937;
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-bottom: 4rem;
+	}
+
+	.skill-item {
+		background: #f9fafb;
+		padding: 1.5rem;
+		border-radius: 0.5rem;
+	}
+
+	.skill-header {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 0.75rem;
+	}
+
+	.skill-name {
+		font-weight: 600;
+		color: #1f2937;
+	}
+
+	.skill-percentage {
+		color: #6366f1;
+		font-weight: 600;
+	}
+
+	.skill-bar {
+		height: 10px;
+		background-color: #e5e7eb;
+		border-radius: 5px;
+		overflow: hidden;
+	}
+
+	.skill-progress {
+		height: 100%;
+		background: linear-gradient(90deg, #6366f1, #8b5cf6);
+		border-radius: 5px;
+		transition: width 0.3s ease;
+	}
+
+	.technologies {
+		text-align: center;
+	}
+
+	.technologies h3 {
+		font-size: 1.5rem;
+		margin-bottom: 1.5rem;
+		color: #1f2937;
+	}
+
+	.tech-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: center;
+	}
+
+	.tech-tag {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+		padding: 0.5rem 1.25rem;
+		border-radius: 2rem;
+		font-size: 0.9rem;
+		font-weight: 500;
+		transition: transform 0.3s ease;
+	}
+
+	.tech-tag:hover {
+		transform: translateY(-3px);
+	}
+
+	@media (max-width: 768px) {
+		.skills-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+

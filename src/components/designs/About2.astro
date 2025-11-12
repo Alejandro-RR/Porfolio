@@ -1,0 +1,265 @@
+---
+// About component - Diseño 2 (D&D Ability Scores)
+---
+
+<section class="about" id="about">
+	<div class="container">
+		<div class="dnd-section">
+			<div class="abilities-panel">
+				<h3 class="panel-title">TECNOLOGÍAS</h3>
+				<div class="abilities-grid">
+					<div class="ability-item">
+						<div class="ability-checkbox">✓</div>
+						<div class="ability-circle">
+							<div class="ability-number">92</div>
+						</div>
+						<div class="ability-mod">%</div>
+						<div class="ability-name">REACT</div>
+					</div>
+					<div class="ability-item">
+						<div class="ability-checkbox">✓</div>
+						<div class="ability-circle">
+							<div class="ability-number">88</div>
+						</div>
+						<div class="ability-mod">%</div>
+						<div class="ability-name">NODE.JS</div>
+					</div>
+					<div class="ability-item">
+						<div class="ability-checkbox">✓</div>
+						<div class="ability-circle">
+							<div class="ability-number">90</div>
+						</div>
+						<div class="ability-mod">%</div>
+						<div class="ability-name">TYPESCRIPT</div>
+					</div>
+					<div class="ability-item">
+						<div class="ability-checkbox">✓</div>
+						<div class="ability-circle">
+							<div class="ability-number">85</div>
+						</div>
+						<div class="ability-mod">%</div>
+						<div class="ability-name">PYTHON</div>
+					</div>
+					<div class="ability-item">
+						<div class="ability-checkbox">✓</div>
+						<div class="ability-circle">
+							<div class="ability-number">80</div>
+						</div>
+						<div class="ability-mod">%</div>
+						<div class="ability-name">MONGODB</div>
+					</div>
+					<div class="ability-item">
+						<div class="ability-checkbox">✓</div>
+						<div class="ability-circle">
+							<div class="ability-number">82</div>
+						</div>
+						<div class="ability-mod">%</div>
+						<div class="ability-name">POSTGRESQL</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="description-panel">
+				<h3 class="panel-title">DESCRIPCIÓN</h3>
+				<div class="description-content">
+					<p>
+						Desarrollador full stack con pasión por crear soluciones tecnológicas innovadoras. 
+						Mi experiencia abarca desde el front-end hasta el back-end, permitiéndome construir 
+						aplicaciones completas y escalables.
+					</p>
+					<p>
+						Especializado en arquitectura de software, bases de datos y APIs RESTful. 
+						Trabajo con tecnologías modernas como Node.js, Python, React y sistemas en la nube 
+						para entregar productos de alta calidad.
+					</p>
+					<div class="description-list">
+						<div class="list-item">1. Experiencia en desarrollo full stack</div>
+						<div class="list-item">2. Dominio de múltiples lenguajes y frameworks</div>
+						<div class="list-item">3. Capacidad para resolver problemas complejos</div>
+						<div class="list-item">4. Trabajo en equipo y comunicación efectiva</div>
+						<div class="list-item">5. Compromiso con el aprendizaje continuo</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about {
+		padding: 3rem 2rem;
+		background: #0a0e1a;
+		background-image: 
+			linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+		background-size: 20px 20px;
+		position: relative;
+	}
+
+	.container {
+		max-width: 1400px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+	}
+
+	.dnd-section {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr;
+		gap: 2rem;
+	}
+
+	.abilities-panel,
+	.description-panel {
+		background: #1a1f2e;
+		border: 3px solid #00d4ff;
+		border-radius: 4px;
+		padding: 2rem;
+		box-shadow: 
+			0 0 0 2px #0a0e1a,
+			0 0 20px rgba(0, 212, 255, 0.2),
+			inset 0 0 50px rgba(0, 0, 0, 0.3);
+	}
+
+	.panel-title {
+		font-family: 'Courier New', monospace;
+		font-size: 1.1rem;
+		color: #00d4ff;
+		margin: 0 0 1.5rem 0;
+		padding-bottom: 0.5rem;
+		border-bottom: 2px solid #00d4ff;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: bold;
+		text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+	}
+
+	.abilities-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
+
+	.ability-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+		position: relative;
+	}
+
+	.ability-checkbox {
+		position: absolute;
+		top: -5px;
+		right: -5px;
+		width: 20px;
+		height: 20px;
+		border: 2px solid #00d4ff;
+		border-radius: 3px;
+		background: rgba(0, 212, 255, 0.1);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #00ffff;
+		font-size: 0.9rem;
+		font-weight: bold;
+		z-index: 2;
+	}
+
+	.ability-circle {
+		width: 90px;
+		height: 90px;
+		border: 4px solid #00d4ff;
+		border-radius: 50%;
+		background: #0a0e1a;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 
+			inset 0 0 20px rgba(0, 0, 0, 0.5),
+			0 0 20px rgba(0, 212, 255, 0.3);
+		position: relative;
+	}
+
+	.ability-circle::before {
+		content: '';
+		position: absolute;
+		width: 80px;
+		height: 80px;
+		border: 2px solid #00d4ff;
+		border-radius: 50%;
+		opacity: 0.5;
+	}
+
+	.ability-number {
+		font-size: 2.5rem;
+		color: #00ffff;
+		font-weight: bold;
+		font-family: 'Courier New', monospace;
+		text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+		z-index: 1;
+	}
+
+	.ability-mod {
+		font-size: 1.2rem;
+		color: #00d4ff;
+		font-weight: bold;
+		font-family: 'Courier New', monospace;
+		background: rgba(0, 212, 255, 0.1);
+		padding: 0.25rem 0.75rem;
+		border-radius: 4px;
+		border: 1px solid #00d4ff;
+	}
+
+	.ability-name {
+		font-size: 0.9rem;
+		color: #00d4ff;
+		font-weight: bold;
+		font-family: 'Courier New', monospace;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.description-content {
+		color: #00ffff;
+		line-height: 1.8;
+		font-family: 'Courier New', monospace;
+		font-size: 0.9rem;
+	}
+
+	.description-content p {
+		margin-bottom: 1rem;
+	}
+
+	.description-list {
+		margin-top: 1.5rem;
+		padding-top: 1.5rem;
+		border-top: 2px solid #00d4ff;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.list-item {
+		color: #00ffff;
+		font-family: 'Courier New', monospace;
+		font-size: 0.85rem;
+		padding-left: 0.5rem;
+	}
+
+	@media (max-width: 968px) {
+		.dnd-section {
+			grid-template-columns: 1fr;
+		}
+
+		.abilities-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.abilities-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

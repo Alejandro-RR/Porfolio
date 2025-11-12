@@ -1,0 +1,276 @@
+---
+// About component - Diseño 7 (Divine/Roman Style)
+---
+
+<section class="about" id="about">
+	<div class="container">
+		<div class="section-header">
+			<div class="section-icon">📜</div>
+			<h2 class="section-title">Sobre Mí</h2>
+			<div class="section-underline"></div>
+		</div>
+
+		<div class="divine-content-grid">
+			<div class="divine-card">
+				<div class="card-header">
+					<span class="card-icon">⚔️</span>
+					<h3>Experiencia</h3>
+				</div>
+				<div class="card-body">
+					<p>
+						Desarrollador full stack con pasión por crear soluciones tecnológicas innovadoras. 
+						Mi experiencia abarca desde el front-end hasta el back-end, permitiéndome construir 
+						aplicaciones completas y escalables.
+					</p>
+					<p>
+						Especializado en arquitectura de software, bases de datos y APIs RESTful. 
+						Trabajo con tecnologías modernas como Node.js, Python, React y sistemas en la nube 
+						para entregar productos de alta calidad.
+					</p>
+				</div>
+			</div>
+
+			<div class="divine-card">
+				<div class="card-header">
+					<span class="card-icon">🏛️</span>
+					<h3>Filosofía</h3>
+				</div>
+				<div class="card-body">
+					<p>
+						Me apasiona resolver problemas complejos y optimizar el rendimiento de las aplicaciones. 
+						Cada proyecto es una oportunidad de crear algo perdurable y significativo.
+					</p>
+					<p>
+						Cuando no estoy codificando, disfruto explorando nuevas tecnologías y compartiendo 
+						conocimiento con otros desarrolladores, construyendo una comunidad de aprendizaje continuo.
+					</p>
+				</div>
+			</div>
+
+			<div class="divine-card achievements">
+				<div class="card-header">
+					<span class="card-icon">🏆</span>
+					<h3>Logros</h3>
+				</div>
+				<div class="achievements-list">
+					<div class="achievement-item">
+						<div class="achievement-icon">⭐</div>
+						<div class="achievement-content">
+							<strong>75+ Proyectos</strong>
+							<span>Completados con éxito</span>
+						</div>
+					</div>
+					<div class="achievement-item">
+						<div class="achievement-icon">⭐</div>
+						<div class="achievement-content">
+							<strong>5 Años</strong>
+							<span>De experiencia profesional</span>
+						</div>
+					</div>
+					<div class="achievement-item">
+						<div class="achievement-icon">⭐</div>
+						<div class="achievement-content">
+							<strong>30+ Clientes</strong>
+							<span>Satisfechos y fieles</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about {
+		padding: 5rem 2rem;
+		background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 100%);
+		position: relative;
+	}
+
+	.about::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: 
+			repeating-linear-gradient(
+				45deg,
+				transparent,
+				transparent 20px,
+				rgba(212, 175, 55, 0.02) 20px,
+				rgba(212, 175, 55, 0.02) 40px
+			);
+		pointer-events: none;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.section-icon {
+		font-size: 3rem;
+		color: #d4af37;
+		margin-bottom: 1rem;
+		text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+	}
+
+	.section-title {
+		font-family: 'Georgia', 'Times New Roman', serif;
+		font-size: 2.5rem;
+		color: #2c1810;
+		margin: 0 0 1rem 0;
+		font-weight: 700;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+
+	.section-underline {
+		width: 150px;
+		height: 3px;
+		background: linear-gradient(90deg, transparent, #d4af37, transparent);
+		margin: 0 auto;
+		position: relative;
+	}
+
+	.section-underline::before,
+	.section-underline::after {
+		content: '⚜';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		color: #d4af37;
+		font-size: 1rem;
+	}
+
+	.section-underline::before {
+		left: -30px;
+	}
+
+	.section-underline::after {
+		right: -30px;
+	}
+
+	.divine-content-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.divine-card {
+		background: rgba(255, 255, 255, 0.8);
+		border: 3px solid #d4af37;
+		border-radius: 8px;
+		padding: 2rem;
+		box-shadow: 
+			0 0 0 2px rgba(212, 175, 55, 0.2),
+			0 15px 40px rgba(0, 0, 0, 0.1),
+			inset 0 0 30px rgba(255, 255, 255, 0.5);
+		position: relative;
+	}
+
+	.divine-card::before {
+		content: '';
+		position: absolute;
+		top: -3px;
+		left: -3px;
+		right: -3px;
+		bottom: -3px;
+		background: linear-gradient(45deg, #d4af37, #f4d03f, #d4af37);
+		border-radius: 8px;
+		z-index: -1;
+		opacity: 0.2;
+	}
+
+	.card-header {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 1.5rem;
+		padding-bottom: 1rem;
+		border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+	}
+
+	.card-icon {
+		font-size: 2rem;
+		color: #d4af37;
+	}
+
+	h3 {
+		font-family: 'Georgia', 'Times New Roman', serif;
+		font-size: 1.5rem;
+		color: #2c1810;
+		margin: 0;
+		font-weight: 700;
+		letter-spacing: 1px;
+	}
+
+	.card-body p {
+		color: #2c1810;
+		line-height: 1.8;
+		margin-bottom: 1rem;
+		font-size: 1rem;
+		font-family: 'Georgia', 'Times New Roman', serif;
+	}
+
+	.card-body p:last-child {
+		margin-bottom: 0;
+	}
+
+	.achievements-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.achievement-item {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1rem;
+		background: rgba(212, 175, 55, 0.1);
+		border-left: 4px solid #d4af37;
+		border-radius: 4px;
+	}
+
+	.achievement-icon {
+		font-size: 2rem;
+		color: #d4af37;
+	}
+
+	.achievement-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.achievement-content strong {
+		font-family: 'Georgia', 'Times New Roman', serif;
+		font-size: 1.2rem;
+		color: #2c1810;
+		font-weight: 700;
+	}
+
+	.achievement-content span {
+		color: #8b7355;
+		font-size: 0.9rem;
+		font-style: italic;
+	}
+
+	@media (max-width: 768px) {
+		.divine-content-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+

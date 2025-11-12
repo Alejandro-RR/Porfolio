@@ -1,0 +1,268 @@
+---
+// Contact component - Diseño 6 (Dashboard Style)
+---
+
+<section class="contact" id="contact">
+	<div class="dashboard-container">
+		<div class="section-header">
+			<h2>Contacto</h2>
+			<p>Información de contacto y formulario</p>
+		</div>
+		<div class="contact-layout">
+			<div class="contact-info-card">
+				<h3>Información de Contacto</h3>
+				<div class="info-list">
+					<div class="info-row">
+						<span class="info-label">Email</span>
+						<a href="mailto:alex@example.com" class="info-value">alex@example.com</a>
+					</div>
+					<div class="info-row">
+						<span class="info-label">Teléfono</span>
+						<a href="tel:+34612345678" class="info-value">+34 612 345 678</a>
+					</div>
+					<div class="info-row">
+						<span class="info-label">Ubicación</span>
+						<span class="info-value">Barcelona, España</span>
+					</div>
+				</div>
+				<div class="social-section">
+					<h4>Redes Sociales</h4>
+					<div class="social-buttons">
+						<a href="#" class="social-btn linkedin">LinkedIn</a>
+						<a href="#" class="social-btn github">GitHub</a>
+						<a href="#" class="social-btn twitter">Twitter</a>
+					</div>
+				</div>
+			</div>
+			<div class="contact-form-card">
+				<h3>Enviar Mensaje</h3>
+				<form class="dashboard-form">
+					<div class="form-row">
+						<label>
+							Nombre
+							<input type="text" placeholder="Tu nombre" required />
+						</label>
+						<label>
+							Email
+							<input type="email" placeholder="tu@email.com" required />
+						</label>
+					</div>
+					<label>
+						Asunto
+						<input type="text" placeholder="Asunto del mensaje" required />
+					</label>
+					<label>
+						Mensaje
+						<textarea rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+					</label>
+					<button type="submit">Enviar Mensaje</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.contact {
+		background: #f8fafc;
+		padding: 3rem 1.5rem;
+	}
+
+	.dashboard-container {
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+
+	.section-header {
+		margin-bottom: 2rem;
+	}
+
+	h2 {
+		font-size: 1.75rem;
+		color: #1e293b;
+		margin: 0 0 0.5rem 0;
+		font-weight: 700;
+	}
+
+	.section-header p {
+		color: #64748b;
+		font-size: 0.95rem;
+		margin: 0;
+	}
+
+	.contact-layout {
+		display: grid;
+		grid-template-columns: 1fr 1.5fr;
+		gap: 1.5rem;
+	}
+
+	.contact-info-card,
+	.contact-form-card {
+		background: white;
+		border-radius: 12px;
+		padding: 2rem;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		border: 1px solid #e2e8f0;
+	}
+
+	h3 {
+		font-size: 1.2rem;
+		color: #1e293b;
+		margin: 0 0 1.5rem 0;
+		font-weight: 600;
+	}
+
+	.info-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		margin-bottom: 2rem;
+	}
+
+	.info-row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 1.25rem;
+		border-bottom: 1px solid #e2e8f0;
+	}
+
+	.info-row:last-of-type {
+		border-bottom: none;
+	}
+
+	.info-label {
+		font-size: 0.85rem;
+		color: #64748b;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		font-weight: 600;
+	}
+
+	.info-value {
+		font-size: 0.95rem;
+		color: #1e293b;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.info-value:hover {
+		color: #667eea;
+	}
+
+	.social-section {
+		padding-top: 1.5rem;
+		border-top: 1px solid #e2e8f0;
+	}
+
+	h4 {
+		font-size: 0.9rem;
+		color: #64748b;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		margin: 0 0 1rem 0;
+		font-weight: 600;
+	}
+
+	.social-buttons {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.social-btn {
+		padding: 0.75rem 1rem;
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 0.9rem;
+		text-align: center;
+		transition: all 0.2s ease;
+	}
+
+	.social-btn.linkedin {
+		background: #0077b5;
+		color: white;
+	}
+
+	.social-btn.github {
+		background: #24292e;
+		color: white;
+	}
+
+	.social-btn.twitter {
+		background: #1da1f2;
+		color: white;
+	}
+
+	.social-btn:hover {
+		opacity: 0.9;
+		transform: translateY(-2px);
+	}
+
+	.dashboard-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.25rem;
+	}
+
+	label {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: #1e293b;
+		font-weight: 600;
+		font-size: 0.9rem;
+	}
+
+	input,
+	textarea {
+		padding: 0.875rem;
+		border: 1px solid #e2e8f0;
+		border-radius: 8px;
+		font-size: 0.95rem;
+		font-family: inherit;
+		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	input:focus,
+	textarea:focus {
+		outline: none;
+		border-color: #667eea;
+		box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+	}
+
+	button {
+		padding: 0.875rem 1.5rem;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+		border: none;
+		border-radius: 8px;
+		font-weight: 600;
+		font-size: 0.95rem;
+		cursor: pointer;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+	}
+
+	@media (max-width: 968px) {
+		.contact-layout {
+			grid-template-columns: 1fr;
+		}
+
+		.form-row {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+

@@ -1,0 +1,306 @@
+---
+// Projects component - Diseño 2 (D&D Attacks & Spellcasting)
+const attacks = [
+	{ name: 'Unarmed Strike', damageType: 'Bludgeoning', range: '5ft' },
+	{ name: 'Dagger', damageType: 'Piercing', range: '20/60ft' },
+	{ name: 'Shortbow', damageType: 'Piercing', range: '80/320ft' },
+	{ name: 'Sling', damageType: 'Bludgeoning', range: '30/120ft' },
+	{ name: 'Light Crossbow', damageType: 'Piercing', range: '80/320ft' },
+	{ name: 'Longsword', damageType: 'Slashing', range: '5ft' },
+	{ name: 'Scimitar', damageType: 'Slashing', range: '5ft' },
+];
+---
+
+<section class="projects" id="projects">
+	<div class="container">
+		<div class="dnd-section">
+			<div class="attacks-panel">
+				<h3 class="panel-title">ATAQUES Y LANZAMIENTOS</h3>
+				<div class="attacks-table">
+					<div class="table-header">
+						<div class="col-name">NAME</div>
+						<div class="col-damage">DAMAGE TYPE</div>
+						<div class="col-range">RANGE</div>
+					</div>
+					{attacks.map((attack) => (
+						<div class="table-row">
+							<div class="col-name">{attack.name}</div>
+							<div class="col-damage">
+								<span class="damage-icon">→</span>
+								{attack.damageType}
+							</div>
+							<div class="col-range">{attack.range}</div>
+						</div>
+					))}
+				</div>
+			</div>
+
+			<div class="spellcasting-panel">
+				<h3 class="panel-title">SPELLCASTING ABILITY</h3>
+				<div class="spell-stats">
+					<div class="spell-stat">
+						<label>SPELL ATTACK BONUS</label>
+						<div class="stat-value">+9</div>
+					</div>
+					<div class="spell-stat">
+						<label>SPELL SAVE DC</label>
+						<div class="stat-value">17</div>
+					</div>
+				</div>
+				<div class="spell-slots-section">
+					<label>SPELL SLOTS</label>
+					<div class="slots-grid">
+						<div class="slot-level">
+							<div class="level-label">1st</div>
+							<div class="slots">
+								<span class="slot filled">●</span>
+								<span class="slot filled">●</span>
+								<span class="slot filled">●</span>
+								<span class="slot">○</span>
+							</div>
+						</div>
+						<div class="slot-level">
+							<div class="level-label">2nd</div>
+							<div class="slots">
+								<span class="slot filled">●</span>
+								<span class="slot filled">●</span>
+								<span class="slot">○</span>
+							</div>
+						</div>
+						<div class="slot-level">
+							<div class="level-label">3rd</div>
+							<div class="slots">
+								<span class="slot filled">●</span>
+								<span class="slot">○</span>
+							</div>
+						</div>
+						<div class="slot-level">
+							<div class="level-label">4th</div>
+							<div class="slots">
+								<span class="slot filled">●</span>
+								<span class="slot">○</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.projects {
+		padding: 3rem 2rem;
+		background: #0a0e1a;
+		background-image: 
+			linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+		background-size: 20px 20px;
+		position: relative;
+	}
+
+	.container {
+		max-width: 1400px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+	}
+
+	.dnd-section {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 2rem;
+	}
+
+	.attacks-panel,
+	.spellcasting-panel {
+		background: #1a1f2e;
+		border: 3px solid #00d4ff;
+		border-radius: 4px;
+		padding: 2rem;
+		box-shadow: 
+			0 0 0 2px #0a0e1a,
+			0 0 20px rgba(0, 212, 255, 0.2),
+			inset 0 0 50px rgba(0, 0, 0, 0.3);
+	}
+
+	.panel-title {
+		font-family: 'Courier New', monospace;
+		font-size: 1.1rem;
+		color: #00d4ff;
+		margin: 0 0 1.5rem 0;
+		padding-bottom: 0.5rem;
+		border-bottom: 2px solid #00d4ff;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: bold;
+		text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+	}
+
+	.attacks-table {
+		border: 2px solid #00d4ff;
+		border-radius: 4px;
+		overflow: hidden;
+	}
+
+	.table-header {
+		display: grid;
+		grid-template-columns: 2fr 2fr 1.5fr;
+		background: #00d4ff;
+		color: #0a0e1a;
+		font-weight: bold;
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		padding: 0.75rem;
+		font-family: 'Courier New', monospace;
+	}
+
+	.table-row {
+		display: grid;
+		grid-template-columns: 2fr 2fr 1.5fr;
+		padding: 0.75rem;
+		border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+		background: rgba(0, 212, 255, 0.05);
+		font-family: 'Courier New', monospace;
+	}
+
+	.table-row:last-child {
+		border-bottom: none;
+	}
+
+	.table-row:nth-child(even) {
+		background: rgba(0, 212, 255, 0.1);
+	}
+
+	.col-name,
+	.col-damage,
+	.col-range {
+		font-size: 0.9rem;
+		color: #00ffff;
+		padding: 0.25rem;
+	}
+
+	.col-name {
+		font-weight: 600;
+	}
+
+	.damage-icon {
+		color: #00d4ff;
+		margin-right: 0.5rem;
+		font-weight: bold;
+	}
+
+	.spell-stats {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.spell-stat {
+		background: rgba(0, 212, 255, 0.1);
+		border: 2px solid #00d4ff;
+		border-radius: 4px;
+		padding: 1rem;
+		text-align: center;
+	}
+
+	.spell-stat label {
+		display: block;
+		font-size: 0.7rem;
+		color: #00d4ff;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin-bottom: 0.5rem;
+		font-family: 'Courier New', monospace;
+	}
+
+	.stat-value {
+		font-size: 1.75rem;
+		color: #00ffff;
+		font-weight: bold;
+		font-family: 'Courier New', monospace;
+		text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+	}
+
+	.spell-slots-section {
+		background: rgba(0, 212, 255, 0.05);
+		border: 2px solid #00d4ff;
+		border-radius: 4px;
+		padding: 1rem;
+	}
+
+	.spell-slots-section > label {
+		display: block;
+		font-size: 0.75rem;
+		font-weight: bold;
+		color: #00d4ff;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin-bottom: 1rem;
+		font-family: 'Courier New', monospace;
+	}
+
+	.slots-grid {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.slot-level {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.level-label {
+		font-size: 0.85rem;
+		font-weight: bold;
+		color: #00d4ff;
+		min-width: 40px;
+		font-family: 'Courier New', monospace;
+	}
+
+	.slots {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.slot {
+		width: 24px;
+		height: 24px;
+		border: 2px solid #00d4ff;
+		border-radius: 50%;
+		background: rgba(0, 212, 255, 0.1);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 0.9rem;
+		color: transparent;
+		font-family: 'Courier New', monospace;
+	}
+
+	.slot.filled {
+		background: #00d4ff;
+		color: #0a0e1a;
+		font-weight: bold;
+	}
+
+	@media (max-width: 968px) {
+		.dnd-section {
+			grid-template-columns: 1fr;
+		}
+
+		.table-header,
+		.table-row {
+			grid-template-columns: 1fr;
+			gap: 0.5rem;
+		}
+
+		.spell-stats {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

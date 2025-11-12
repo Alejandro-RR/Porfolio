@@ -1,5 +1,42 @@
 ---
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 
+// Componentes alternativos para diferentes diseños
+import Hero2 from '../components/designs/Hero2.astro';
+import Hero3 from '../components/designs/Hero3.astro';
+import About2 from '../components/designs/About2.astro';
+import About3 from '../components/designs/About3.astro';
+import Skills2 from '../components/designs/Skills2.astro';
+import Skills3 from '../components/designs/Skills3.astro';
+import Projects2 from '../components/designs/Projects2.astro';
+import Projects3 from '../components/designs/Projects3.astro';
+import Contact2 from '../components/designs/Contact2.astro';
+import Contact3 from '../components/designs/Contact3.astro';
+import Hero4 from '../components/designs/Hero4.astro';
+import About4 from '../components/designs/About4.astro';
+import Skills4 from '../components/designs/Skills4.astro';
+import Projects4 from '../components/designs/Projects4.astro';
+import Contact4 from '../components/designs/Contact4.astro';
+import Hero5 from '../components/designs/Hero5.astro';
+import About5 from '../components/designs/About5.astro';
+import Skills5 from '../components/designs/Skills5.astro';
+import Projects5 from '../components/designs/Projects5.astro';
+import Contact5 from '../components/designs/Contact5.astro';
+import Hero6 from '../components/designs/Hero6.astro';
+import About6 from '../components/designs/About6.astro';
+import Skills6 from '../components/designs/Skills6.astro';
+import Projects6 from '../components/designs/Projects6.astro';
+import Contact6 from '../components/designs/Contact6.astro';
+import Hero7 from '../components/designs/Hero7.astro';
+import About7 from '../components/designs/About7.astro';
+import Skills7 from '../components/designs/Skills7.astro';
+import Projects7 from '../components/designs/Projects7.astro';
+import Contact7 from '../components/designs/Contact7.astro';
 ---
 
 <html lang="en">
@@ -8,9 +45,1020 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Alex Portfolio</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<header class="main-header">
+			<nav>
+				<div class="logo">
+					<a href="#hero">AR</a>
+				</div>
+				<ul>
+					<li><a href="#hero">Inicio</a></li>
+					<li><a href="#about">Sobre mí</a></li>
+					<li><a href="#skills">Habilidades</a></li>
+					<li><a href="#projects">Proyectos</a></li>
+					<li><a href="#contact">Contacto</a></li>
+					<li>
+						<select id="designSelect" class="design-select">
+							<option value="diseño1">Diseño 1</option>
+							<option value="diseño2">Diseño 2</option>
+							<option value="diseño3">Diseño 3</option>
+							<option value="diseño4">Diseño 4</option>
+							<option value="diseño5">Diseño 5</option>
+							<option value="diseño6">Diseño 6</option>
+							<option value="diseño7">Diseño 7</option>
+						</select>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main id="main-content">
+			<!-- Diseño 1 -->
+			<div class="design-content" data-design="diseño1">
+				<Hero />
+				<About />
+				<Skills />
+				<Projects />
+				<Contact />
+			</div>
+			
+			<!-- Diseño 2 -->
+			<div class="design-content" data-design="diseño2" style="display: none;">
+				<Hero2 />
+				<About2 />
+				<Skills2 />
+				<Projects2 />
+				<Contact2 />
+			</div>
+			
+			<!-- Diseño 3 -->
+			<div class="design-content" data-design="diseño3" style="display: none;">
+				<Hero3 />
+				<About3 />
+				<Skills3 />
+				<Projects3 />
+				<Contact3 />
+			</div>
+
+			<!-- Diseño 4 -->
+			<div class="design-content" data-design="diseño4" style="display: none;">
+				<Hero4 />
+				<About4 />
+				<Skills4 />
+				<Projects4 />
+				<Contact4 />
+			</div>
+			
+			<!-- Diseño 5 -->
+			<div class="design-content" data-design="diseño5" style="display: none;">
+				<Hero5 />
+				<About5 />
+				<Skills5 />
+				<Projects5 />
+				<Contact5 />
+			</div>
+			
+			<!-- Diseño 6 -->
+			<div class="design-content" data-design="diseño6" style="display: none;">
+				<Hero6 />
+				<About6 />
+				<Skills6 />
+				<Projects6 />
+				<Contact6 />
+			</div>
+			
+			<!-- Diseño 7 -->
+			<div class="design-content" data-design="diseño7" style="display: none;">
+				<Hero7 />
+				<About7 />
+				<Skills7 />
+				<Projects7 />
+				<Contact7 />
+			</div>
+		</main>
+		<Footer />
 	</body>
+	<script>
+		// Sistema de cambio de diseño
+		function changeDesign(designKey: string) {
+			const allDesigns = document.querySelectorAll('.design-content');
+			const selectedDesign = document.querySelector(`[data-design="${designKey}"]`) as HTMLElement | null;
+			
+			// Si el diseño seleccionado ya está visible, no hacer nada
+			if (selectedDesign && !selectedDesign.classList.contains('fade-out') && selectedDesign.style.display !== 'none') {
+				return;
+			}
+			
+			// Fade out de todos los diseños visibles
+			allDesigns.forEach(design => {
+				const designElement = design as HTMLElement;
+				if (designElement.style.display !== 'none' && !designElement.classList.contains('fade-out')) {
+					designElement.classList.add('fade-out');
+				}
+			});
+			
+			// Después de la animación de fade out, cambiar el contenido
+			setTimeout(() => {
+				// Ocultar todos los diseños
+				allDesigns.forEach(design => {
+					const designElement = design as HTMLElement;
+					designElement.style.display = 'none';
+					designElement.classList.remove('fade-out', 'fade-in');
+				});
+				
+				// Mostrar y hacer fade in del diseño seleccionado
+				if (selectedDesign) {
+					selectedDesign.style.display = 'block';
+					// Pequeño delay para asegurar que el display se aplica antes de la animación
+					setTimeout(() => {
+						selectedDesign.classList.add('fade-in');
+					}, 10);
+				}
+			}, 400); // Duración de la animación fade-out
+			
+			// Actualizar color del header según el diseño (con transición suave)
+			const header = document.querySelector('.main-header') as HTMLElement | null;
+			const body = document.body;
+			
+			if (header && body) {
+				// Remover clases de diseño anteriores del header y body
+				header.classList.remove('design-1', 'design-2', 'design-3', 'design-4', 'design-5', 'design-6', 'design-7');
+				body.classList.remove('design-1', 'design-2', 'design-3', 'design-4', 'design-5', 'design-6', 'design-7');
+				
+				// Añadir clase al body para los estilos de scrollbar
+				// El diseño 1 no necesita clase, usa los estilos por defecto
+				if (designKey === 'diseño2') {
+					body.classList.add('design-2');
+				} else if (designKey === 'diseño3') {
+					body.classList.add('design-3');
+				} else if (designKey === 'diseño4') {
+					body.classList.add('design-4');
+				} else if (designKey === 'diseño5') {
+					body.classList.add('design-5');
+				} else if (designKey === 'diseño6') {
+					body.classList.add('design-6');
+				} else if (designKey === 'diseño7') {
+					body.classList.add('design-7');
+				}
+				// Si es diseño 1, no añadimos ninguna clase al body (usa estilos por defecto)
+				
+				// Aplicar nueva clase de diseño después de un pequeño delay para la transición
+				setTimeout(() => {
+					if (designKey === 'diseño1') {
+						header.classList.add('design-1');
+						if (header.classList.contains('scrolled')) {
+							header.style.backgroundColor = '#667eea';
+						}
+					} else if (designKey === 'diseño2') {
+						header.classList.add('design-2');
+						if (header.classList.contains('scrolled')) {
+							header.style.backgroundColor = '#1a1f2e';
+						}
+					} else if (designKey === 'diseño3') {
+						header.classList.add('design-3');
+						if (header.classList.contains('scrolled')) {
+							header.style.backgroundColor = '#1a1a1a';
+						}
+					} else if (designKey === 'diseño4') {
+						header.classList.add('design-4');
+						if (header.classList.contains('scrolled')) {
+							header.style.backgroundColor = '#ffffff';
+						}
+					} else if (designKey === 'diseño5') {
+						header.classList.add('design-5');
+						if (header.classList.contains('scrolled')) {
+							header.style.backgroundColor = '#ffffff';
+						}
+					} else if (designKey === 'diseño6') {
+						header.classList.add('design-6');
+						if (header.classList.contains('scrolled')) {
+							header.style.backgroundColor = '#ffffff';
+						}
+					} else if (designKey === 'diseño7') {
+						header.classList.add('design-7');
+						if (header.classList.contains('scrolled')) {
+							header.style.backgroundColor = '#faf8f3';
+						}
+					}
+				}, 200); // Delay para sincronizar con la transición del contenido
+			}
+			
+			// Guardar preferencia
+			localStorage.setItem('selectedDesign', designKey);
+			
+			// Actualizar header después de cambiar diseño
+			setTimeout(updateHeader, 500);
+		}
+		
+		// Inicializar selector de diseño
+		document.addEventListener('DOMContentLoaded', () => {
+			const designSelect = document.getElementById('designSelect') as HTMLSelectElement | null;
+			if (designSelect) {
+				// Cargar diseño guardado
+				const savedDesign = localStorage.getItem('selectedDesign') || 'diseño1';
+				designSelect.value = savedDesign;
+				
+				// Mostrar el diseño inicial sin animación de fade-out
+				const allDesigns = document.querySelectorAll('.design-content');
+				allDesigns.forEach(design => {
+					const designElement = design as HTMLElement;
+					designElement.style.display = 'none';
+				});
+				
+				const initialDesign = document.querySelector(`[data-design="${savedDesign}"]`) as HTMLElement | null;
+				if (initialDesign) {
+					initialDesign.style.display = 'block';
+					// Aplicar fade-in después de un pequeño delay para que se vea la animación inicial
+					setTimeout(() => {
+						initialDesign.classList.add('fade-in');
+					}, 50);
+				}
+				
+				// Aplicar estilos del header para el diseño inicial (sin cambiar el contenido)
+				const header = document.querySelector('.main-header') as HTMLElement | null;
+				const body = document.body;
+				
+				if (header && body) {
+					header.classList.remove('design-1', 'design-2', 'design-3', 'design-4', 'design-5', 'design-6', 'design-7');
+					body.classList.remove('design-1', 'design-2', 'design-3', 'design-4', 'design-5', 'design-6', 'design-7');
+					
+					if (savedDesign === 'diseño1') {
+						header.classList.add('design-1');
+					} else if (savedDesign === 'diseño2') {
+						header.classList.add('design-2');
+						body.classList.add('design-2');
+					} else if (savedDesign === 'diseño3') {
+						header.classList.add('design-3');
+						body.classList.add('design-3');
+					} else if (savedDesign === 'diseño4') {
+						header.classList.add('design-4');
+						body.classList.add('design-4');
+					} else if (savedDesign === 'diseño5') {
+						header.classList.add('design-5');
+						body.classList.add('design-5');
+					} else if (savedDesign === 'diseño6') {
+						header.classList.add('design-6');
+						body.classList.add('design-6');
+					} else if (savedDesign === 'diseño7') {
+						header.classList.add('design-7');
+						body.classList.add('design-7');
+					}
+					setTimeout(updateHeader, 100);
+				}
+				
+				// Escuchar cambios
+				designSelect.addEventListener('change', (e) => {
+					const target = e.target as HTMLSelectElement;
+					if (target) {
+						changeDesign(target.value);
+					}
+				});
+			}
+		});
+		
+		// Función para actualizar header al hacer scroll
+		function updateHeader() {
+			const header = document.querySelector('.main-header') as HTMLElement | null;
+			const hero = document.querySelector('#hero') as HTMLElement | null;
+			const designSelect = document.getElementById('designSelect') as HTMLSelectElement | null;
+			
+			if (!hero || !header) return;
+			
+			const heroBottom = hero.offsetTop + hero.offsetHeight;
+			const scrollPosition = window.scrollY;
+			const currentDesign = designSelect ? designSelect.value : 'diseño1';
+			
+			if (scrollPosition > heroBottom - 100) {
+				header.classList.add('scrolled');
+				// Mantener el color del diseño cuando está scrolled
+				if (currentDesign === 'diseño1') {
+					header.style.backgroundColor = '#667eea';
+				} else if (currentDesign === 'diseño2') {
+					header.style.backgroundColor = '#1a1f2e';
+				} else if (currentDesign === 'diseño3') {
+					header.style.backgroundColor = '#1a1a1a';
+				} else if (currentDesign === 'diseño4') {
+					header.style.backgroundColor = '#ffffff';
+				} else if (currentDesign === 'diseño5') {
+					header.style.backgroundColor = '#ffffff';
+				} else if (currentDesign === 'diseño6') {
+					header.style.backgroundColor = '#ffffff';
+				} else if (currentDesign === 'diseño7') {
+					header.style.backgroundColor = '#faf8f3';
+				}
+				
+				// Asegurar que las clases de diseño estén presentes
+				header.classList.remove('design-1', 'design-2', 'design-3', 'design-4', 'design-5', 'design-6', 'design-7');
+				if (currentDesign === 'diseño1') {
+					header.classList.add('design-1');
+				} else if (currentDesign === 'diseño2') {
+					header.classList.add('design-2');
+				} else if (currentDesign === 'diseño3') {
+					header.classList.add('design-3');
+				} else if (currentDesign === 'diseño4') {
+					header.classList.add('design-4');
+				} else if (currentDesign === 'diseño5') {
+					header.classList.add('design-5');
+				} else if (currentDesign === 'diseño6') {
+					header.classList.add('design-6');
+				} else if (currentDesign === 'diseño7') {
+					header.classList.add('design-7');
+				}
+			} else {
+				header.classList.remove('scrolled');
+				// Color transparente cuando está sobre el hero
+				if (currentDesign === 'diseño4' || currentDesign === 'diseño5' || currentDesign === 'diseño6') {
+					header.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
+				} else if (currentDesign === 'diseño7') {
+					header.style.backgroundColor = 'rgba(250, 248, 243, 0.9)';
+				} else {
+					header.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+				}
+			}
+		}
+		
+		// Verificar al cargar
+		document.addEventListener('DOMContentLoaded', () => {
+			updateHeader();
+		});
+		
+		// Verificar al hacer scroll
+		window.addEventListener('scroll', updateHeader);
+	</script>
 </html>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html, body {
+		overflow-x: hidden;
+		width: 100%;
+		height: 100%;
+	}
+
+	/* Scrollbar personalizada - Diseño 1 (Default) */
+	body:not(.design-2):not(.design-3):not(.design-4):not(.design-5):not(.design-6):not(.design-7) ::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	body:not(.design-2):not(.design-3):not(.design-4):not(.design-5):not(.design-6):not(.design-7) ::-webkit-scrollbar-track {
+		background: #f1f1f1;
+		border-radius: 10px;
+	}
+
+	body:not(.design-2):not(.design-3):not(.design-4):not(.design-5):not(.design-6):not(.design-7) ::-webkit-scrollbar-thumb {
+		background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+		border-radius: 10px;
+		border: 2px solid #f1f1f1;
+	}
+
+	body:not(.design-2):not(.design-3):not(.design-4):not(.design-5):not(.design-6):not(.design-7) ::-webkit-scrollbar-thumb:hover {
+		background: linear-gradient(180deg, #764ba2 0%, #667eea 100%);
+	}
+
+	/* Scrollbar para Firefox - Diseño 1 */
+	body:not(.design-2):not(.design-3):not(.design-4):not(.design-5):not(.design-6):not(.design-7) {
+		scrollbar-width: thin;
+		scrollbar-color: #667eea #f1f1f1;
+	}
+
+	body {
+		position: relative;
+	}
+
+	main {
+		position: relative;
+	}
+
+	.design-content {
+		width: 100%;
+		opacity: 1;
+		transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+		transform: translateY(0);
+	}
+
+	.design-content.fade-out {
+		opacity: 0;
+		transform: translateY(-20px);
+		pointer-events: none;
+	}
+
+	.design-content.fade-in {
+		opacity: 1;
+		transform: translateY(0);
+		animation: fadeInUp 0.5s ease-out;
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+
+
+	.main-header {
+		position: sticky;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
+		box-shadow: 0 2px 20px rgba(0, 0, 0, 0.26);
+		background-color: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(10px);
+		transition: background-color 0.6s ease, box-shadow 0.3s ease, border-color 0.6s ease;
+		width: 100%;
+		will-change: transform;
+		margin-bottom: -80px;
+	}
+
+	.main-header.scrolled {
+		background-color: #667eea;
+	}
+
+	.main-header nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem 4rem;
+		max-width: 1400px;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	.logo a {
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: #6366f1;
+		text-decoration: none;
+	}
+
+	.main-header nav ul {
+		display: flex;
+		gap: 2rem;
+		list-style: none;
+		align-items: center;
+	}
+
+	.design-select {
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+		border: 2px solid rgba(255, 255, 255, 0.3);
+		background: rgba(255, 255, 255, 0.2);
+		backdrop-filter: blur(10px);
+		color: white;
+		font-size: 0.9rem;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		appearance: none;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='white' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 0.75rem center;
+		background-size: 12px 12px;
+		padding-right: 2.5rem;
+	}
+
+	.design-select:hover {
+		background-color: rgba(255, 255, 255, 0.3);
+		border-color: rgba(255, 255, 255, 0.5);
+	}
+
+	.design-select:focus {
+		outline: none;
+		border-color: rgba(255, 255, 255, 0.6);
+	}
+
+	.design-select option {
+		background: #667eea;
+		color: white;
+	}
+
+	.main-header.scrolled .design-select {
+		background: rgba(255, 255, 255, 0.9);
+		color: #1f2937;
+		border-color: rgba(0, 0, 0, 0.1);
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231f2937' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+		background-size: 12px 12px !important;
+		background-repeat: no-repeat !important;
+		background-position: right 0.75rem center !important;
+	}
+
+	.main-header.scrolled .design-select option {
+		background: white;
+		color: #1f2937;
+	}
+
+	.main-header nav ul a {
+		text-decoration: none;
+		color: #1f2937;
+		font-weight: 500;
+		transition: color 0.3s ease;
+	}
+
+	.main-header:not(.scrolled) nav ul a {
+		color: white;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	}
+
+	.main-header:not(.scrolled) .logo a {
+		color: white;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	}
+
+	.main-header nav ul a:hover {
+		color: #6366f1;
+	}
+
+	.main-header:not(.scrolled) nav ul a:hover {
+		color: #e0e7ff;
+	}
+
+	/* Estilos específicos para diseño 2 (D&D) */
+	.main-header.scrolled.design-2 {
+		background: #1a1f2e;
+		border-bottom: 3px solid #00d4ff;
+		box-shadow: 
+			0 2px 20px rgba(0, 0, 0, 0.26),
+			0 0 30px rgba(0, 212, 255, 0.3);
+	}
+
+	.main-header.scrolled.design-2 nav ul a,
+	.main-header.scrolled.design-2 .logo a {
+		color: #00ffff;
+		text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+	}
+
+	.main-header.scrolled.design-2 nav ul a:hover {
+		color: #00d4ff;
+		text-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+	}
+
+	.main-header.scrolled.design-2 .design-select {
+		background: rgba(0, 212, 255, 0.1);
+		color: #00ffff;
+		border-color: #00d4ff;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2300ffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+		background-size: 12px 12px !important;
+		background-repeat: no-repeat !important;
+		background-position: right 0.75rem center !important;
+	}
+
+	.main-header.scrolled.design-2 .design-select:hover {
+		background-color: rgba(0, 212, 255, 0.2);
+		border-color: #00ffff;
+		box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+	}
+
+	.main-header.scrolled.design-2 .design-select option {
+		background: #1a1f2e;
+		color: #00ffff;
+	}
+
+	/* Estilos específicos para diseño 3 (Retro) */
+	.main-header.scrolled.design-3 nav ul a,
+	.main-header.scrolled.design-3 .logo a {
+		color: #00ff00;
+		text-shadow: 0 0 10px #00ff00;
+		font-family: 'Courier New', monospace;
+		font-weight: bold;
+		letter-spacing: 1px;
+	}
+
+	.main-header.scrolled.design-3 nav ul a:hover {
+		color: #ff8c00;
+		text-shadow: 0 0 10px #ff8c00;
+	}
+
+	.main-header.scrolled.design-3 {
+		border-bottom: 3px solid #00ff00;
+		box-shadow: 
+			0 2px 20px rgba(0, 0, 0, 0.26),
+			0 0 20px rgba(0, 255, 0, 0.3);
+	}
+
+	.main-header.scrolled.design-3 .design-select {
+		background: #0a0a0a;
+		color: #00ff00;
+		border-color: #00ff00;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2300ff00' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+		background-size: 12px 12px !important;
+		background-repeat: no-repeat !important;
+		background-position: right 0.75rem center !important;
+		font-family: 'Courier New', monospace;
+		font-weight: bold;
+	}
+
+	.main-header.scrolled.design-3 .design-select:hover {
+		background-color: rgba(0, 255, 0, 0.1);
+		border-color: #ff8c00;
+		box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+	}
+
+	.main-header.scrolled.design-3 .design-select option {
+		background: #1a1a1a;
+		color: #00ff00;
+	}
+
+	.main-header.design-4:not(.scrolled) nav ul a,
+	.main-header.design-4:not(.scrolled) .logo a {
+		color: #0f172a;
+		text-shadow: none;
+	}
+
+	.main-header.design-4:not(.scrolled) .design-select {
+		background: rgba(255, 255, 255, 0.8);
+		color: #0f172a;
+		border-color: rgba(15, 23, 42, 0.1);
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%230f172a' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+		background-size: 12px 12px !important;
+		background-repeat: no-repeat !important;
+		background-position: right 0.75rem center !important;
+	}
+
+	.main-header.scrolled.design-4 {
+		background: #ffffff;
+		border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+		box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+	}
+
+	.main-header.scrolled.design-4 nav ul a,
+	.main-header.scrolled.design-4 .logo a {
+		color: #0f172a;
+		text-shadow: none;
+	}
+
+	.main-header.scrolled.design-4 nav ul a:hover {
+		color: #2563eb;
+	}
+
+	.main-header.scrolled.design-4 .design-select {
+		background: #f1f5f9;
+		color: #0f172a;
+		border-color: rgba(15, 23, 42, 0.12);
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%230f172a' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+		background-size: 12px 12px !important;
+		background-repeat: no-repeat !important;
+		background-position: right 0.75rem center !important;
+	}
+
+	.main-header.scrolled.design-4 .design-select option {
+		background: #ffffff;
+		color: #0f172a;
+	}
+
+	/* Estilos específicos para diseño 5 (Red Social) */
+	.main-header.design-5:not(.scrolled) nav ul a,
+	.main-header.design-5:not(.scrolled) .logo a {
+		color: #1c1e21;
+		text-shadow: none;
+	}
+
+	.main-header.design-5:not(.scrolled) .design-select {
+		background: rgba(255, 255, 255, 0.9);
+		color: #1c1e21;
+		border-color: rgba(28, 30, 33, 0.1);
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231c1e21' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+		background-size: 12px 12px !important;
+		background-repeat: no-repeat !important;
+		background-position: right 0.75rem center !important;
+	}
+
+	.main-header.scrolled.design-5 {
+		background: #ffffff;
+		border-bottom: 1px solid #e4e6eb;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.main-header.scrolled.design-5 nav ul a,
+	.main-header.scrolled.design-5 .logo a {
+		color: #1c1e21;
+		text-shadow: none;
+	}
+
+	.main-header.scrolled.design-5 nav ul a:hover {
+		color: #1877f2;
+	}
+
+	.main-header.scrolled.design-5 .design-select {
+		background: #f0f2f5;
+		color: #1c1e21;
+		border-color: #e4e6eb;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231c1e21' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+		background-size: 12px 12px !important;
+		background-repeat: no-repeat !important;
+		background-position: right 0.75rem center !important;
+	}
+
+	.main-header.scrolled.design-5 .design-select:hover {
+		background-color: #e4e6eb;
+	}
+
+	.main-header.scrolled.design-5 .design-select option {
+		background: #ffffff;
+		color: #1c1e21;
+	}
+
+	/* Estilos específicos para diseño 6 (Dashboard) */
+	.main-header.design-6:not(.scrolled) nav ul a,
+	.main-header.design-6:not(.scrolled) .logo a {
+		color: #1e293b;
+		text-shadow: none;
+	}
+
+	.main-header.design-6:not(.scrolled) .design-select {
+		background: rgba(255, 255, 255, 0.9);
+		color: #1e293b;
+		border-color: rgba(30, 41, 59, 0.1);
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e293b' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+		background-size: 12px 12px !important;
+		background-repeat: no-repeat !important;
+		background-position: right 0.75rem center !important;
+	}
+
+	.main-header.scrolled.design-6 {
+		background: #ffffff;
+		border-bottom: 2px solid #e2e8f0;
+		box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+	}
+
+	.main-header.scrolled.design-6 nav ul a,
+	.main-header.scrolled.design-6 .logo a {
+		color: #1e293b;
+		text-shadow: none;
+	}
+
+	.main-header.scrolled.design-6 nav ul a:hover {
+		color: #667eea;
+	}
+
+	.main-header.scrolled.design-6 .design-select {
+		background: #f8fafc;
+		color: #1e293b;
+		border-color: rgba(30, 41, 59, 0.12);
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e293b' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+		background-size: 12px 12px !important;
+		background-repeat: no-repeat !important;
+		background-position: right 0.75rem center !important;
+	}
+
+	.main-header.scrolled.design-6 .design-select:hover {
+		background-color: #f1f5f9;
+		border-color: #667eea;
+	}
+
+	.main-header.scrolled.design-6 .design-select option {
+		background: #ffffff;
+		color: #1e293b;
+	}
+
+	/* Estilos específicos para diseño 7 (Divino/Romano) */
+	.main-header.design-7:not(.scrolled) nav ul a,
+	.main-header.design-7:not(.scrolled) .logo a {
+		color: #2c1810;
+		text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+		font-family: 'Georgia', 'Times New Roman', serif;
+		font-weight: 600;
+	}
+
+	.main-header.design-7:not(.scrolled) .design-select {
+		background: rgba(250, 248, 243, 0.9);
+		color: #2c1810;
+		border-color: rgba(212, 175, 55, 0.4);
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232c1810' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+		background-size: 12px 12px !important;
+		background-repeat: no-repeat !important;
+		background-position: right 0.75rem center !important;
+		font-family: 'Georgia', 'Times New Roman', serif;
+	}
+
+	.main-header.scrolled.design-7 {
+		background: #faf8f3;
+		border-bottom: 3px solid #d4af37;
+		box-shadow: 
+			0 2px 20px rgba(0, 0, 0, 0.1),
+			0 0 30px rgba(212, 175, 55, 0.2);
+	}
+
+	.main-header.scrolled.design-7 nav ul a,
+	.main-header.scrolled.design-7 .logo a {
+		color: #2c1810;
+		text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+		font-family: 'Georgia', 'Times New Roman', serif;
+		font-weight: 600;
+	}
+
+	.main-header.scrolled.design-7 nav ul a:hover {
+		color: #d4af37;
+		text-shadow: 0 2px 8px rgba(212, 175, 55, 0.5);
+	}
+
+	.main-header.scrolled.design-7 .design-select {
+		background: rgba(212, 175, 55, 0.1);
+		color: #2c1810;
+		border-color: #d4af37;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232c1810' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+		background-size: 12px 12px !important;
+		background-repeat: no-repeat !important;
+		background-position: right 0.75rem center !important;
+		font-family: 'Georgia', 'Times New Roman', serif;
+		font-weight: 600;
+	}
+
+	.main-header.scrolled.design-7 .design-select:hover {
+		background-color: rgba(212, 175, 55, 0.2);
+		box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+	}
+
+	.main-header.scrolled.design-7 .design-select option {
+		background: #faf8f3;
+		color: #2c1810;
+	}
+
+	/* Scrollbar personalizada - Diseño 2 (D&D) */
+	body.design-2 ::-webkit-scrollbar {
+		width: 14px;
+	}
+
+	body.design-2 ::-webkit-scrollbar-track {
+		background: #0a0e1a;
+		border-left: 2px solid #00d4ff;
+	}
+
+	body.design-2 ::-webkit-scrollbar-thumb {
+		background: linear-gradient(180deg, #00d4ff 0%, #00ffff 100%);
+		border: 2px solid #0a0e1a;
+		border-radius: 0;
+		box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+	}
+
+	body.design-2 ::-webkit-scrollbar-thumb:hover {
+		background: linear-gradient(180deg, #00ffff 0%, #00d4ff 100%);
+		box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+	}
+
+	body.design-2 {
+		scrollbar-width: thin;
+		scrollbar-color: #00d4ff #0a0e1a;
+	}
+
+	/* Scrollbar personalizada - Diseño 3 (Retro) */
+	body.design-3 ::-webkit-scrollbar {
+		width: 16px;
+	}
+
+	body.design-3 ::-webkit-scrollbar-track {
+		background: #000000;
+		border-left: 3px solid #00ff00;
+		box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.2);
+	}
+
+	body.design-3 ::-webkit-scrollbar-thumb {
+		background: #00ff00;
+		border: 2px solid #000000;
+		border-radius: 0;
+		box-shadow: 
+			0 0 10px #00ff00,
+			inset 0 0 5px rgba(0, 255, 0, 0.5);
+	}
+
+	body.design-3 ::-webkit-scrollbar-thumb:hover {
+		background: #ff8c00;
+		box-shadow: 
+			0 0 15px #ff8c00,
+			inset 0 0 5px rgba(255, 140, 0, 0.5);
+	}
+
+	body.design-3 {
+		scrollbar-width: thin;
+		scrollbar-color: #00ff00 #000000;
+	}
+
+	/* Scrollbar personalizada - Diseño 4 (Simple/Modern) */
+	body.design-4 ::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	body.design-4 ::-webkit-scrollbar-track {
+		background: #f8fafc;
+		border-left: 1px solid #e2e8f0;
+	}
+
+	body.design-4 ::-webkit-scrollbar-thumb {
+		background: #cbd5e1;
+		border-radius: 5px;
+		border: 2px solid #f8fafc;
+	}
+
+	body.design-4 ::-webkit-scrollbar-thumb:hover {
+		background: #94a3b8;
+	}
+
+	body.design-4 {
+		scrollbar-width: thin;
+		scrollbar-color: #cbd5e1 #f8fafc;
+	}
+
+	/* Scrollbar personalizada - Diseño 5 (Social Media) */
+	body.design-5 ::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	body.design-5 ::-webkit-scrollbar-track {
+		background: #f0f2f5;
+	}
+
+	body.design-5 ::-webkit-scrollbar-thumb {
+		background: #bcc0c4;
+		border-radius: 4px;
+	}
+
+	body.design-5 ::-webkit-scrollbar-thumb:hover {
+		background: #8a8d91;
+	}
+
+	body.design-5 {
+		scrollbar-width: thin;
+		scrollbar-color: #bcc0c4 #f0f2f5;
+	}
+
+	/* Scrollbar personalizada - Diseño 6 (Dashboard) */
+	body.design-6 ::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	body.design-6 ::-webkit-scrollbar-track {
+		background: #f1f5f9;
+		border-left: 1px solid #e2e8f0;
+	}
+
+	body.design-6 ::-webkit-scrollbar-thumb {
+		background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+		border-radius: 6px;
+		border: 2px solid #f1f5f9;
+	}
+
+	body.design-6 ::-webkit-scrollbar-thumb:hover {
+		background: linear-gradient(180deg, #764ba2 0%, #667eea 100%);
+	}
+
+	body.design-6 {
+		scrollbar-width: thin;
+		scrollbar-color: #667eea #f1f5f9;
+	}
+
+	/* Scrollbar personalizada - Diseño 7 (Divino/Romano) */
+	body.design-7 ::-webkit-scrollbar {
+		width: 14px;
+	}
+
+	body.design-7 ::-webkit-scrollbar-track {
+		background: #f5f1e8;
+		border-left: 3px solid #d4af37;
+		box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1);
+	}
+
+	body.design-7 ::-webkit-scrollbar-thumb {
+		background: linear-gradient(180deg, #d4af37 0%, #f4d03f 100%);
+		border: 2px solid #f5f1e8;
+		border-radius: 0;
+		box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+	}
+
+	body.design-7 ::-webkit-scrollbar-thumb:hover {
+		background: linear-gradient(180deg, #f4d03f 0%, #d4af37 100%);
+		box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+	}
+
+	body.design-7 {
+		scrollbar-width: thin;
+		scrollbar-color: #d4af37 #f5f1e8;
+	}
+
+	@media (max-width: 768px) {
+		.main-header nav {
+			padding: 1rem 2rem;
+		}
+		
+		.main-header nav ul {
+			gap: 1rem;
+			font-size: 0.9rem;
+		}
+
+		.design-select {
+			padding: 0.4rem 0.75rem;
+			font-size: 0.8rem;
+			padding-right: 2rem;
+		}
+	}
+</style>

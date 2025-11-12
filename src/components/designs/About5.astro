@@ -1,0 +1,162 @@
+---
+// About component - Diseño 5 (Red Social Style)
+---
+
+<section class="about" id="about">
+	<div class="container">
+		<div class="social-post">
+			<div class="post-header">
+				<div class="post-author">
+					<div class="author-avatar">AR</div>
+					<div class="author-info">
+						<strong>Alejandro Rojo Rubio</strong>
+						<span>Hace 2 horas · 🌍</span>
+					</div>
+				</div>
+			</div>
+			<div class="post-content">
+				<h2>Sobre mí</h2>
+				<p>
+					Desarrollador full stack con pasión por crear soluciones tecnológicas innovadoras. 
+					Mi experiencia abarca desde el front-end hasta el back-end, permitiéndome construir 
+					aplicaciones completas y escalables.
+				</p>
+				<p>
+					Especializado en arquitectura de software, bases de datos y APIs RESTful. 
+					Trabajo con tecnologías modernas como Node.js, Python, React y sistemas en la nube 
+					para entregar productos de alta calidad.
+				</p>
+				<p>
+					Me apasiona resolver problemas complejos y optimizar el rendimiento de las aplicaciones. 
+					Cuando no estoy codificando, disfruto explorando nuevas tecnologías y compartiendo 
+					conocimiento con otros desarrolladores.
+				</p>
+			</div>
+			<div class="post-footer">
+				<button class="reaction-btn">
+					<span>👍</span>
+					<span>Me gusta</span>
+				</button>
+				<button class="reaction-btn">
+					<span>💬</span>
+					<span>Comentar</span>
+				</button>
+				<button class="reaction-btn">
+					<span>↗️</span>
+					<span>Compartir</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about {
+		background: #f0f2f5;
+		padding: 2rem 1rem;
+	}
+
+	.container {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.social-post {
+		background: #ffffff;
+		border-radius: 8px;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+	}
+
+	.post-header {
+		padding: 1rem 1.5rem;
+		border-bottom: 1px solid #e4e6eb;
+	}
+
+	.post-author {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.author-avatar {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background: #667eea;
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		font-size: 0.9rem;
+	}
+
+	.author-info {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.author-info strong {
+		color: #1c1e21;
+		font-size: 0.95rem;
+	}
+
+	.author-info span {
+		color: #65676b;
+		font-size: 0.85rem;
+	}
+
+	.post-content {
+		padding: 1.5rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+		color: #1c1e21;
+		margin: 0 0 1rem 0;
+	}
+
+	.post-content p {
+		color: #1c1e21;
+		line-height: 1.6;
+		margin-bottom: 1rem;
+		font-size: 0.95rem;
+	}
+
+	.post-content p:last-child {
+		margin-bottom: 0;
+	}
+
+	.post-footer {
+		display: flex;
+		justify-content: space-around;
+		padding: 0.5rem 1.5rem;
+		border-top: 1px solid #e4e6eb;
+	}
+
+	.reaction-btn {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.5rem 1rem;
+		background: transparent;
+		border: none;
+		color: #65676b;
+		font-size: 0.9rem;
+		font-weight: 600;
+		cursor: pointer;
+		border-radius: 4px;
+		transition: background 0.2s ease;
+	}
+
+	.reaction-btn:hover {
+		background: #f0f2f5;
+	}
+
+	.reaction-btn span:first-child {
+		font-size: 1.1rem;
+	}
+</style>
+
